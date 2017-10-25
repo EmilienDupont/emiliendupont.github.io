@@ -1,136 +1,28 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-<style>
+---
+layout: default
+---
+{% assign posts_count = paginator.posts | size %}
 
-body {
-    background: #262626
-}
+<div class="home">
+  {% if posts_count > 0 %}
+    <div class="posts">
+      {% for post in paginator.posts %}
+        <div class="post py3">
+          <p class="post-meta">{{ post.date | date: site.date_format }}</p>
+          <a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h3 class="h1 post-title">{{ post.title }}</h3></a>
+          <span class="post-summary">
+            {% if post.summary %}
+              {{ post.summary }}
+            {% else %}
+              {{ post.excerpt }}
+            {% endif %}
+          </span>
+        </div>
+      {% endfor %}
+    </div>
 
-</style>
-<body>
-<script>
-
-/*
- * Code is heavily based on Nadieh Bremer's http://bl.ocks.org/nbremer/cbf61944aeb3204d3e4986ea645afc2b
- * Nadieh's code is in turn heavily based on Justin Windle's http://codepen.io/soulwire/pen/foktm
- */
-
-var width = 960,
-    height = 500;
-
-var svg = d3.select("body")
-            .append("svg")
-            .attr("width", width)
-            .attr("height", height)
-            .on("mousemove", mousemove);
-
-/*
- * Particle handling functions and variable start here
- */
-
-var circle_group = svg.append("g")
-                    .style("isolation", "isolate");
-
-var id = 0, // to keep track of each particle
-    colors = ['#69D2E7', '#A7DBD8', '#E0E4CC', '#F38630', '#FA6900', '#FF4E50', '#F9D423'],
-    particles = [];
-
-var circle_size = { "min" : 8 * width/2000, "max" :32 * width/2000 },
-    force = { "min" : 6 * width/2000, "max" : 10 * width/2000 };
-
-// Helper function to get random number in range [start, end]
-function get_random_number(start, end) {
-    return ((Math.random() * (end-start)) + start);
-}
-
-// Function to add a particle at position x, y
-function spawn(x, y) {
-    var particle = {
-        x: x,
-        y: y,
-        id: id,
-        alive: true,
-        radius: get_random_number( circle_size.min, circle_size.max ),
-        wander: get_random_number( 1, 1.5 ),
-        color: colors[ Math.round( get_random_number(0, colors.length-1)) ],
-        drag: get_random_number( 0.2, 0.99 ),
-        age: get_random_number( 0.92, 0.98 ),
-        theta: get_random_number( 0,  2 * Math.PI ),
-        force: get_random_number( force.min, force.max )
-    };
-
-    id += 1;
-
-    particle.vx = Math.sin( particle.theta ) * particle.force;
-    particle.vy = Math.cos( particle.theta ) * particle.force;
-
-    particles.push( particle );
-}
-
-// Function to add num particles at position x, y
-function add_particles(x, y, num) {
-    for (var j = 0; j < num; j++) {
-        spawn(x, y);
-    }
-}
-
-// Function to increment position of a particle
-function move(d) {
-    d.x += d.vx;
-    d.y += d.vy;
-
-    d.vx *= d.drag;
-    d.vy *= d.drag;
-
-    d.theta += get_random_number( -0.5, 0.5 ) * d.wander;
-    d.vx += Math.sin( d.theta ) * 0.5;
-    d.vy += Math.cos( d.theta ) * 0.5;
-
-    d.radius *= d.age;
-    d.alive = d.radius > 0.5;
-}
-
-// Function which displays and moves particles
-function redraw() {
-    // Remove non-alive particles
-    particles = particles.filter(function(d) { return d.alive; });
-
-    // Join data, keeping track of ids
-    var circles = circle_group.selectAll("circle")
-                    .data(particles, function(d) { return d.id; });
-
-    // Update circles
-    circles.each(move)
-            .transition("move").duration(50).ease("linear")
-            .attr("cx", function(d) { return d.x; })
-            .attr("cy", function(d) { return d.y; })
-            .attr("r", function(d) { return d.radius; });
-
-    circles.enter().append("circle")
-            .style("mix-blend-mode", "screen")
-            .attr("cx", function(d) { return d.x; })
-            .attr("cy", function(d) { return d.y; })
-            .attr("fill", function(d) { return d.color; })
-            .attr("r", function(d) { return d.radius; });
-
-    // This is necessary to remove circles when they become non-alive
-    circles.exit().remove();
-}
-
-/*
- * Particle handling functions end here
- */
-
-// Do something fun with this, e.g. add particles on mousemove
-function mousemove() {
-    var point = d3.mouse(this);
-    add_particles(point[0], point[1], 2);
-}
-
-// This is necessary to update animation
-d3.timer(function() {
-    redraw();
-})
-</script>
-
+    {% include pagination.html %}
+  {% else %}
+    <h1 class='center'>{{ site.text.index.coming_soon }}</h1>
+  {% endif %}
+</div>
