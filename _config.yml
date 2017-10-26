@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 # Site settings
 title:       Pixyll
 email:       your_email@example.com
-author:      John Otander
+author:      Emilien Dupont
 description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
 baseurl:     ""
-url:         "http://pixyll.com"
+url:         "http://emiliendupont.github.io"
 date_format: "%b %-d, %Y"
 header_pages:
  - about.md
@@ -52,7 +51,7 @@ facebook_appid:
 facebook_comments_number: 10
 
 # Social icons
-github_username:
+github_username: EmilienDupont
 reddit_username:
 bitbucket_username:
 stackoverflow_id:
@@ -131,6 +130,3 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
-=======
-theme: jekyll-theme-minimal
->>>>>>> 1d65826fbcfa396b7fbd08bae809c5469838de70
