@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introducing Hyde
+title: Yolo yolo
 ---
 
 Here is a new blog post.
