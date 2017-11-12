@@ -9,7 +9,7 @@ permalink:        pretty
 title:            Emilien Dupont
 tagline:          'Yolo'
 description:      'Hello at <a href="https://github.com/EmilienDupont" target="_blank">@hola</a>.'
-url:              http://emiliendupont.github.io
+url:              https://emiliendupont.github.io
 baseurl:
 
 author:
@@ -19,5 +19,5 @@ author:
 paginate:         5
 
 twitter:
-  username:           emidup
-  url:                https://twitter.com/emidup
+  username:       emidup
+  url:            https://twitter.com/emidup
