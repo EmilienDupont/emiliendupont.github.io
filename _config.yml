@@ -1,4 +1,5 @@
 # Dependencies
+markdown:         redcarpet
 highlighter:      rouge
 
 # Permalinks
@@ -9,7 +10,7 @@ title:            Emilien Dupont
 tagline:          'Yolo'
 description:      'Hello at <a href="https://github.com/EmilienDupont" target="_blank">@hola</a>.'
 url:              http://emiliendupont.github.io
-baseurl:          
+baseurl:
 
 author:
   name:           'Emilien Dupont'
