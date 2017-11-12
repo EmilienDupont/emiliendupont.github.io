@@ -7,16 +7,12 @@ permalink:        pretty
 
 # Setup
 title:            Emilien Dupont
-tagline:          'Yolo'
+tagline:          'Deep Learning is deep learning'
 description:      'Hello at <a href="https://github.com/EmilienDupont" target="_blank">@hola</a>.'
 url:              https://emiliendupont.github.io
 baseurl:
-
-author:
-  name:           'Emilien Dupont'
-  url:            https://emiliendupont.github.io
-
 paginate:         5
+name:             Emilien Dupont
 
 twitter:
   username:       emidup
