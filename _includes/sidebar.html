@@ -21,12 +21,11 @@
       {% for node in pages_list %}
         {% if node.title != null %}
           {% if node.layout == "page" %}
-            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}/">{{ node.title }}</a>
+            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
           {% endif %}
         {% endif %}
       {% endfor %}
 
-      <a class="sidebar-nav-item" href="https://bl.ocks.org/EmilienDupont">Projects</a>
       <a class="sidebar-nav-item" href="https://bl.ocks.org/EmilienDupont">d3 Blocks</a>
     </nav>
 
