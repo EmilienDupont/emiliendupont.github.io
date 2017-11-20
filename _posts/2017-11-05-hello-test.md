@@ -52,19 +52,19 @@ circle:hover {
 <script>
 var width = 720,
     height = 500,
-    nx = 192,
-    ny = 100,
+    nx = 72,
+    ny = 50,
     rect_width = parseFloat(width)/nx,
     rect_height = parseFloat(height)/ny,
     drawing_time = 30;
 
 var scale_x = d3.scale.linear()
                       .domain([0, width])
-                      .range([0,1]);
+                      .range([0, 1]);
 
 var scale_y = d3.scale.linear()
                       .domain([0, height])
-                      .range([height/width,0]);
+                      .range([height/width, 0]);
 
 var lineFunction = d3.svg.line()
                          .x(function(d) { return d.x; })
