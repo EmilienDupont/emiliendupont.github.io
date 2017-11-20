@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Yolo blog post test
+title: Post test
 comments: true
 ---
 
