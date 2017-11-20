@@ -363,7 +363,7 @@ function minimize(x0,y0) {
 </div>
 
 
-To modify the function or add more optimization algorithms, have a look at the (code)[https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87].
+To modify the function or add more optimization algorithms, have a look at the [code](https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87).
 
 
 It would be interesting to visualize newer optimization algorithms such as Eve
