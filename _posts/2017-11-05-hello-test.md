@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Yolo blog post test
+comments: true
 ---
 
 Here is a new blog post.
