@@ -4,9 +4,8 @@ title: Interactive Visualization of Optimization Algorithms in Deep Learning
 comments: true
 ---
 
-Here is a new blog post.
-Can you include javascript in a blog post? Let's try to!
-Does _this_ and **this** work?
+Optimization paths on a simple function.
+
 
 <style>
 .sgd {
@@ -45,7 +44,6 @@ circle:hover {
   fill-opacity: .3;
 }
 </style>
-
 <div id="optim-viz">
 
 <script src="//d3js.org/d3.v3.min.js"></script>
@@ -86,9 +84,7 @@ var function_g = svg.append("g").on("mousedown", mousedown),
     gradient_path_g = svg.append("g"),
     menu_g = svg.append("g");
 
-/*
- * Set up the buttons
- */
+// Set up the buttons
 var draw_bool = {"SGD" : true, "Momentum" : true, "RMSProp" : true, "Adam" : true};
 
 var buttons = ["SGD", "Momentum", "RMSProp", "Adam"];
@@ -134,9 +130,7 @@ function button_press() {
   }
 }
 
-/*
- * Set up the function and gradients
- */
+// Set up the function and gradients
 
 // Function params
 var params_0 = {'a' : 3, 'delta' : .48},
@@ -170,7 +164,7 @@ function f(x, y) {
     return parabolas + bells;
 }
 
-/* Returns gradient of f at (x,y) */
+// Returns gradient of f at (x,y)
 function grad_f(x,y) {
     var grad_x = x_squared_grad(x, params_0),
         grad_y = x_squared_grad(y, params_1);
@@ -179,8 +173,8 @@ function grad_f(x,y) {
     return [grad_x, grad_y];
 }
 
-/* Returns nx by ny grid of f(x,y) values as a 1 dimensional array.
-   Each entry of array is [x, y, f(x,y)] */
+// Returns nx by ny grid of f(x,y) values as a 1 dimensional array.
+//   Each entry of array is [x, y, f(x,y)]
 function get_f_grid(nx, ny) {
     var grid = []
     for (i = 0; i < nx; i++) {
@@ -193,7 +187,7 @@ function get_f_grid(nx, ny) {
     return grid;
 }
 
-/* Return min and max of f */
+// Return min and max of f
 function min_max_f(f_array) {
     var min = Infinity,
         max = -Infinity;
@@ -209,9 +203,7 @@ function min_max_f(f_array) {
 }
 
 
-/*
- * Set up the heatmap
- */
+// Set up the heatmap
 
 var f_grid = get_f_grid(nx, ny);
 
@@ -220,7 +212,7 @@ var min_max = min_max_f(f_grid);
 var min_f = min_max[0],
     max_f = min_max[1];
 
-/* Set up function values */
+// Set up function values
 function_g.selectAll("rect")
           .data(f_grid)
           .enter()
@@ -232,10 +224,8 @@ function_g.selectAll("rect")
           .attr("fill", function(d) { return color_scale((d[2] - min_f)/(max_f - min_f)); });
 
 
-/*
- * Set up optimization/gradient descent functions.
- * SGD, Momentum, RMSProp, Adam.
- */
+// Set up optimization/gradient descent functions.
+// SGD, Momentum, RMSProp, Adam.
 
 function get_sgd_path(x0, y0, learning_rate, num_steps) {
     var sgd_history = [{"x": scale_x.invert(x0), "y": scale_y.invert(y0)}];
@@ -309,10 +299,7 @@ function get_adam_path(x0, y0, learning_rate, num_steps, beta_1, beta_2, eps) {
     return adam_history;
 }
 
-
-/*
- * Functions necessary for path visualizations
- */
+// Functions necessary for path visualizations
 
 function draw_path(path_data, type) {
     var gradient_path = gradient_path_g.selectAll(type)
@@ -342,14 +329,12 @@ function draw_path(path_data, type) {
                    .attr("stroke-opacity", 0.5);
 }
 
-/*
- * Start minimization from click on heatmap
- */
+// Start minimization from click on heatmap
 
 function mousedown() {
-    /* Get initial point */
+    // Get initial point
     var point = d3.mouse(this);
-    /* Minimize and draw paths */
+    // Minimize and draw paths
     minimize(scale_x(point[0]), scale_y(point[1]));
 }
 
@@ -376,3 +361,10 @@ function minimize(x0,y0) {
 </script>
 
 </div>
+
+
+To modify the function or add more optimization algorithms, have a look at the (code)[https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87].
+
+
+It would be interesting to visualize newer optimization algorithms such as Eve
+or YellowFin as well.
