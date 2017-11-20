@@ -15,7 +15,7 @@ Does _this_ and **this** work?
 var width = 960,
     height = 500;
 
-var svg = d3.select("body")
+var svg = d3.select("#rain")
               .append("svg")
               .attr("width", width)
               .attr("height", height);
