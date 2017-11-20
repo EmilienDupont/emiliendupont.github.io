@@ -50,7 +50,7 @@ circle:hover {
 
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
-var width = 960,
+var width = 720,
     height = 500,
     nx = 192,
     ny = 100,
@@ -72,8 +72,10 @@ var lineFunction = d3.svg.line()
                          .interpolate("linear");
 
 var color_scale = d3.scale.linear()
-    .domain([0, 0.33, .66, 1])
-    .range(["yellow", "orange", "brown", "purple"]);
+      .domain([0, 1])
+      .range(['white', 'black'])
+    //.domain([0, 0.33, .66, 1])
+    //.range(["yellow", "orange", "brown", "purple"]);
 
 var svg = d3.select("#optim-viz")
               .append("svg")
@@ -119,7 +121,7 @@ menu_g.selectAll("text")
         .attr("font-size", 15)
         .attr("font-weight", 200)
         .attr("fill", "white")
-        .attr("fill-opacity", 0.8);
+        .attr("fill-opacity", 1);
 
 function button_press() {
   var type = d3.select(this).attr("class")
