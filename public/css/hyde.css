@@ -99,13 +99,6 @@ a.sidebar-nav-item:focus {
   font-weight: bold;
 }
 
-.sidebar-logo {
-}
-
-.sidebar-logo img {
-      width: 200px;
-}
-
 /* Sticky sidebar
  *
  * Add the `sidebar-sticky` class to the sidebar's container to affix it the
