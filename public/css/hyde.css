@@ -100,14 +100,13 @@ a.sidebar-nav-item:focus {
 }
 
 .sidebar-logo {
-      padding: 1.5rem;
 }
 
 .sidebar-logo img {
       border-radius: 50%;
       -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
-      width: 160px;
+      width: 200px;
       margin: 0 auto;
 }
 

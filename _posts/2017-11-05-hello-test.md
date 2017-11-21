@@ -4,9 +4,6 @@ title: Interactive Visualization of Optimization Algorithms in Deep Learning
 comments: true
 ---
 
-![placeholder]({{ site.url }}/imgs/profile.png)
-![placeholder]({{ site.baseurl }}/imgs/profile.png)
-
 Optimization paths on a simple function.
 
 
