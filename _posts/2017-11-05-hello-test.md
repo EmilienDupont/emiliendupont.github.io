@@ -5,7 +5,9 @@ comments: true
 ---
 
 Changed
-![placeholder]({{ site.baseurl }}/_assets/profile.png)
+![placeholder]({{ site.url }}/_assets/profile.png)
+
+{{ site.baseurl }}/_assets/profile.png
 
 Optimization paths on a simple function.
 
