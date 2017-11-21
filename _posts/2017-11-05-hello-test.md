@@ -4,7 +4,8 @@ title: Interactive Visualization of Optimization Algorithms in Deep Learning
 comments: true
 ---
 
-![placeholder](https://emiliendupont.github.io/_assets/profile.png)
+Changed
+![placeholder]({{ site.baseurl }}/_assets/profile.png)
 
 Optimization paths on a simple function.
 
