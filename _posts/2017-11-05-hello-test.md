@@ -4,6 +4,8 @@ title: Interactive Visualization of Optimization Algorithms in Deep Learning
 comments: true
 ---
 
+### Work in progress
+
 Optimization paths on a simple function.
 
 
