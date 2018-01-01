@@ -4,9 +4,39 @@ title: Interactive Visualization of Optimization Algorithms in Deep Learning
 comments: true
 ---
 
-### Work in progress
+It is often difficult to understand exactly what happens during optimization in deep learning. One way to do this is to visualize the optimization paths on simple non convex functions.
 
-Optimization paths on a simple function.
+
+
+Click anywhere on the function heatmap to start a minimization.
+
+You can toggle the different algorithms by clicking on the circles in the lower bar. The algorithms are [Stochastic Gradient Descent (SGD)](https://en.wikipedia.org/wiki/Stochastic_gradient_descent), [SGD with Momentum](https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Momentum), [RMSProp](http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf) and [Adam](http://arxiv.org/abs/1412.6980).
+
+The code is available here [here](https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87) if you would like to try your own functions. It would be interesting to modify the code to visualize more recent algorithms like [Eve](https://arxiv.org/abs/1611.01505) or [YellowFin](https://arxiv.org/abs/1706.03471) although it is unclear whether they would differ significantly from SGD on these toy problems.
+
+## Interesting observations
+
+The above function is extremely simple, it is given by
+
+$$ f(x, y) =  x^2 + y^2 - a \exp(-((x - 1)^2 + y^2)) - b \exp(-((x + 1)^2 + y^2))$$
+
+It is basically a quadratic "bowl" with two gaussians creating local minima at (1, 0) and (-1, 0) respectively. The size of these minima is controlled by the $a$ and $b$ parameters.
+Even though this function is very simple there are a few interesting things happening.
+
+### Different minima
+
+### The effects of momentum
+
+
+## Classic optimization test functions
+
+There are several functions
+
+
+
+
+
+
 
 
 <style>
@@ -46,185 +76,145 @@ circle:hover {
   fill-opacity: .3;
 }
 </style>
+
 <div id="optim-viz">
-
-<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-contour.v1.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script>
-var width = 720,
+
+var width = 960,
     height = 500,
-    nx = 72,
-    ny = 50,
-    rect_width = parseFloat(width)/nx,
-    rect_height = parseFloat(height)/ny,
-    drawing_time = 30;
-
-var scale_x = d3.scale.linear()
-                      .domain([0, width])
-                      .range([0, 1]);
-
-var scale_y = d3.scale.linear()
-                      .domain([0, height])
-                      .range([height/width, 0]);
-
-var lineFunction = d3.svg.line()
-                         .x(function(d) { return d.x; })
-                         .y(function(d) { return d.y; })
-                         .interpolate("linear");
-
-var color_scale = d3.scale.linear()
-      .domain([0, 1])
-      .range(['white', 'black'])
-    //.domain([0, 0.33, .66, 1])
-    //.range(["yellow", "orange", "brown", "purple"]);
+    nx = parseInt(width / 5), // grid sizes
+    ny = parseInt(height / 5),
+    h = 1e-7, // step used when approximating gradients
+    drawing_time = 30; // max time to run optimization
 
 var svg = d3.select("#optim-viz")
-              .append("svg")
-              .attr("width", width)
-              .attr("height", height);
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+// Parameters describing where function is defined
+var domain_x = [-2, 2],
+    domain_y = [-2, 2],
+    domain_f = [-2, 8],
+    contour_step = 0.5; // Step size of contour plot
+
+var scale_x = d3.scaleLinear()
+                .domain([0, width])
+                .range(domain_x);
+
+var scale_y = d3.scaleLinear()
+                .domain([0, height])
+                .range(domain_y);
+
+var thresholds = d3.range(domain_f[0], domain_f[1], contour_step);
+
+var color_scale = d3.scaleLinear()
+    .domain(d3.extent(thresholds))
+    .interpolate(function() { return d3.interpolateYlGnBu; });
 
 var function_g = svg.append("g").on("mousedown", mousedown),
     gradient_path_g = svg.append("g"),
     menu_g = svg.append("g");
 
-// Set up the buttons
-var draw_bool = {"SGD" : true, "Momentum" : true, "RMSProp" : true, "Adam" : true};
-
-var buttons = ["SGD", "Momentum", "RMSProp", "Adam"];
-
-menu_g.append("rect").attr("x", 0).attr("y", height - 40).attr("width", width).attr("height", 40).attr("fill", "white").attr("opacity", 0.1);
-
-menu_g.selectAll("circle")
-        .data(buttons)
-        .enter()
-        .append("circle")
-        .attr("cx", function(d,i) { return width/4 * (i + 0.25);} )
-        .attr("cy", height - 20)
-        .attr("r", 10)
-        .attr("stroke-width", 0.5)
-        .attr("stroke", "black")
-        .attr("class", function(d) { console.log(d); return d;})
-        .attr("fill-opacity", 0.5)
-        .attr("stroke-opacity", 1)
-        .on("mousedown", button_press);
-
-menu_g.selectAll("text")
-        .data(buttons)
-        .enter()
-        .append("text")
-        .attr("x", function(d,i) { return width/4 * (i + 0.25) + 18;} )
-        .attr("y", height - 14)
-        .text(function(d) { return d; })
-        .attr("text-anchor", "start")
-        .attr("font-family", "Helvetica Neue")
-        .attr("font-size", 15)
-        .attr("font-weight", 200)
-        .attr("fill", "white")
-        .attr("fill-opacity", 1);
-
-function button_press() {
-  var type = d3.select(this).attr("class")
-  if (draw_bool[type]) {
-    d3.select(this).attr("fill-opacity", 0);
-    draw_bool[type] = false;
-  } else {
-    d3.select(this).attr("fill-opacity", 0.5)
-    draw_bool[type] = true;
-  }
-}
-
 // Set up the function and gradients
 
-// Function params
-var params_0 = {'a' : 3, 'delta' : .48},
-    params_1 = {'a' : 6, 'delta' : .25},
-    params_2 = { 'a' : -2, 'a_x' : -80, 'a_y' : -80, 'delta_x': .3, 'delta_y': .3 },
-    params_3 = { 'a' : -1.2, 'a_x' : -80, 'a_y' : -80, 'delta_x': .7, 'delta_y': .2 };
-
-function exp_squared(x, y, params) {
-    return params.a * Math.exp( params.a_x * Math.pow(x - params.delta_x, 2) + params.a_y * Math.pow(y - params.delta_y, 2));
-}
-
-function exp_squared_grad_x(x, y, params) {
-    return 2 * params.a_x * (x - params.delta_x) * exp_squared(x, y, params);
-}
-
-function exp_squared_grad_y(x, y, params) {
-    return 2 * params.a_y * (y - params.delta_y) * exp_squared(x, y, params);
-}
-
-function x_squared(x, params) {
-    return params.a * Math.pow(x - params.delta, 2);
-}
-
-function x_squared_grad(x, params) {
-    return params.a * 2 * (x - params.delta);
-}
-
+// Value of f at (x, y)
 function f(x, y) {
-    var parabolas = x_squared(x, params_0) + x_squared(y, params_1)
-        bells = exp_squared(x,y,params_2) + exp_squared(x,y,params_3);
-    return parabolas + bells;
+    return -2 * Math.exp(-((x - 1) * (x - 1) + y * y) / .2) + -3 * Math.exp(-((x + 1) * (x + 1) + y * y) / .2) + x * x + y * y;
 }
 
-// Returns gradient of f at (x,y)
+// Returns gradient of f at (x, y)
 function grad_f(x,y) {
-    var grad_x = x_squared_grad(x, params_0),
-        grad_y = x_squared_grad(y, params_1);
-    grad_x += exp_squared_grad_x(x,y,params_2) + exp_squared_grad_x(x,y,params_3);
-    grad_y += exp_squared_grad_y(x,y,params_2) + exp_squared_grad_y(x,y,params_3);
+    var grad_x = (f(x + h, y) - f(x, y)) / h
+        grad_y = (f(x, y + h) - f(x, y)) / h
     return [grad_x, grad_y];
 }
 
-// Returns nx by ny grid of f(x,y) values as a 1 dimensional array.
-//   Each entry of array is [x, y, f(x,y)]
-function get_f_grid(nx, ny) {
-    var grid = []
+
+// Returns values of f(x,y) at each point on grid as 1 dim array.
+function get_f_values(nx, ny) {
+    var grid = new Array(nx * ny);
     for (i = 0; i < nx; i++) {
         for (j = 0; j < ny; j++) {
             var x = scale_x( parseFloat(i) / nx * width ),
                 y = scale_y( parseFloat(j) / ny * height );
-            grid.push([x, y, f(x,y)]);
+            // Set value at ordering expected by d3.contour
+            grid[i + j * nx] = f(x, y);
         }
     }
     return grid;
 }
 
-// Return min and max of f
-function min_max_f(f_array) {
-    var min = Infinity,
-        max = -Infinity;
-    for (i = 0; i < f_array.length; i++) {
-        if (f_array[i][2] < min) {
-            min = f_array[i][2];
-        }
-        if (f_array[i][2] > max) {
-            max = f_array[i][2];
-        }
+// Set up the contour plot
+
+var contours = d3.contours()
+    .size([nx, ny])
+    .thresholds(thresholds);
+
+var f_values = get_f_values(nx, ny);
+
+function_g.selectAll("path")
+          .data(contours(f_values))
+          .enter().append("path")
+          .attr("d", d3.geoPath(d3.geoIdentity().scale(width / nx)))
+          .attr("fill", function(d) { return color_scale(d.value); })
+          .attr("stroke", "none");
+
+// Set up buttons
+
+var draw_bool = {"SGD" : true, "Momentum" : true, "RMSProp" : true, "Adam" : true};
+
+var buttons = ["SGD", "Momentum", "RMSProp", "Adam"];
+
+menu_g.append("rect")
+      .attr("x", 0)
+      .attr("y", height - 40)
+      .attr("width", width)
+      .attr("height", 40)
+      .attr("fill", "white")
+      .attr("opacity", 0.2);
+
+menu_g.selectAll("circle")
+      .data(buttons)
+      .enter()
+      .append("circle")
+      .attr("cx", function(d,i) { return width/4 * (i + 0.25);} )
+      .attr("cy", height - 20)
+      .attr("r", 10)
+      .attr("stroke-width", 0.5)
+      .attr("stroke", "black")
+      .attr("class", function(d) { console.log(d); return d;})
+      .attr("fill-opacity", 0.5)
+      .attr("stroke-opacity", 1)
+      .on("mousedown", button_press);
+
+menu_g.selectAll("text")
+      .data(buttons)
+      .enter()
+      .append("text")
+      .attr("x", function(d,i) { return width/4 * (i + 0.25) + 18;} )
+      .attr("y", height - 14)
+      .text(function(d) { return d; })
+      .attr("text-anchor", "start")
+      .attr("font-family", "Helvetica Neue")
+      .attr("font-size", 15)
+      .attr("font-weight", 200)
+      .attr("fill", "white")
+      .attr("fill-opacity", 0.8);
+
+function button_press() {
+    var type = d3.select(this).attr("class")
+    if (draw_bool[type]) {
+        d3.select(this).attr("fill-opacity", 0);
+        draw_bool[type] = false;
+    } else {
+        d3.select(this).attr("fill-opacity", 0.5)
+        draw_bool[type] = true;
     }
-    return [min, max];
 }
-
-
-// Set up the heatmap
-
-var f_grid = get_f_grid(nx, ny);
-
-var min_max = min_max_f(f_grid);
-
-var min_f = min_max[0],
-    max_f = min_max[1];
-
-// Set up function values
-function_g.selectAll("rect")
-          .data(f_grid)
-          .enter()
-          .append("rect")
-          .attr("x", function(d) { return scale_x.invert(d[0]); })
-          .attr("y", function(d) { return scale_y.invert(d[1]); })
-          .attr("width", rect_width)
-          .attr("height", rect_height)
-          .attr("fill", function(d) { return color_scale((d[2] - min_f)/(max_f - min_f)); });
-
 
 // Set up optimization/gradient descent functions.
 // SGD, Momentum, RMSProp, Adam.
@@ -303,12 +293,16 @@ function get_adam_path(x0, y0, learning_rate, num_steps, beta_1, beta_2, eps) {
 
 // Functions necessary for path visualizations
 
+var line_function = d3.line()
+                      .x(function(d) { return d.x; })
+                      .y(function(d) { return d.y; });
+
 function draw_path(path_data, type) {
     var gradient_path = gradient_path_g.selectAll(type)
                         .data(path_data)
                         .enter()
                         .append("path")
-                        .attr("d", lineFunction(path_data.slice(0,1)))
+                        .attr("d", line_function(path_data.slice(0,1)))
                         .attr("class", type)
                         .attr("stroke-width", 3)
                         .attr("fill", "none")
@@ -316,11 +310,11 @@ function draw_path(path_data, type) {
                         .transition()
                         .duration(drawing_time)
                         .delay(function(d,i) { return drawing_time * i; })
-                        .attr("d", function(d,i) { return lineFunction(path_data.slice(0,i+1));})
+                        .attr("d", function(d,i) { return line_function(path_data.slice(0,i+1));})
                         .remove();
 
     gradient_path_g.append("path")
-                   .attr("d", lineFunction(path_data))
+                   .attr("d", line_function(path_data))
                    .attr("class", type)
                    .attr("stroke-width", 3)
                    .attr("fill", "none")
@@ -331,7 +325,7 @@ function draw_path(path_data, type) {
                    .attr("stroke-opacity", 0.5);
 }
 
-// Start minimization from click on heatmap
+// Start minimization from click on contour map
 
 function mousedown() {
     // Get initial point
@@ -344,29 +338,21 @@ function minimize(x0,y0) {
     gradient_path_g.selectAll("path").remove();
 
     if (draw_bool.SGD) {
-        var sgd_data = get_sgd_path(x0, y0, 1e-3, 500);
+        var sgd_data = get_sgd_path(x0, y0, 2e-2, 500);
         draw_path(sgd_data, "sgd");
     }
     if (draw_bool.Momentum) {
-        var momentum_data = get_momentum_path(x0, y0, 1e-3, 200, 0.8);
+        var momentum_data = get_momentum_path(x0, y0, 1e-2, 200, 0.8);
         draw_path(momentum_data, "momentum");
     }
     if (draw_bool.RMSProp) {
-        var rmsprop_data = get_rmsprop_path(x0, y0, 1e-3, 300, 0.99, 1e-6);
+        var rmsprop_data = get_rmsprop_path(x0, y0, 1e-2, 300, 0.99, 1e-6);
         draw_path(rmsprop_data, "rmsprop");
     }
     if (draw_bool.Adam) {
-        var adam_data = get_adam_path(x0, y0, 1e-3, 100, 0.7, 0.999, 1e-6);
+        var adam_data = get_adam_path(x0, y0, 1e-2, 100, 0.7, 0.999, 1e-6);
         draw_path(adam_data, "adam");
     }
 }
 </script>
-
 </div>
-
-
-To modify the function or add more optimization algorithms, have a look at the [code](https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87).
-
-
-It would be interesting to visualize newer optimization algorithms such as Eve
-or YellowFin as well.
