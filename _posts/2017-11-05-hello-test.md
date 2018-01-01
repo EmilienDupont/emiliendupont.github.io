@@ -16,11 +16,11 @@ The code is available here [here](https://bl.ocks.org/EmilienDupont/aaf429be5705
 
 ## Interesting observations
 
-The above function is extremely simple, it is given by
+The above function is given by
 
-$$ f(x, y) =  x^2 + y^2 - a \exp(-((x - 1)^2 + y^2)) - b \exp(-((x + 1)^2 + y^2))$$
+$$ f(x, y) =  x^2 + y^2 - a \exp(-((x - 1)^2 + y^2)) - b \exp(-((x + 1)^2 + y^2)) $$
 
-It is basically a quadratic "bowl" with two gaussians creating local minima at (1, 0) and (-1, 0) respectively. The size of these minima is controlled by the $a$ and $b$ parameters.
+It is basically a quadratic "bowl" with two gaussians creating local minima at (1, 0) and (-1, 0) respectively. The size of these minima is controlled by the \(a\) and \(b\) parameters.
 Even though this function is very simple there are a few interesting things happening.
 
 ### Different minima
