@@ -6,31 +6,37 @@ comments: true
 
 It is often difficult to understand exactly what happens during optimization in deep learning. One way to do this is to visualize the optimization paths on simple non convex functions.
 
+> Click anywhere on the function heatmap to start a minimization.
 
+You can toggle the different algorithms by clicking on the circles in the lower bar. The algorithms are
+* [Stochastic Gradient Descent (SGD)](https://en.wikipedia.org/wiki/Stochastic_gradient_descent)
+* [SGD with Momentum](https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Momentum)
+* [RMSProp](http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf)
+* [Adam](http://arxiv.org/abs/1412.6980)
 
-Click anywhere on the function heatmap to start a minimization.
-
-You can toggle the different algorithms by clicking on the circles in the lower bar. The algorithms are [Stochastic Gradient Descent (SGD)](https://en.wikipedia.org/wiki/Stochastic_gradient_descent), [SGD with Momentum](https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Momentum), [RMSProp](http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf) and [Adam](http://arxiv.org/abs/1412.6980).
-
-The code is available here [here](https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87) if you would like to try your own functions. It would be interesting to modify the code to visualize more recent algorithms like [Eve](https://arxiv.org/abs/1611.01505) or [YellowFin](https://arxiv.org/abs/1706.03471) although it is unclear whether they would differ significantly from SGD on these toy problems.
+The code is available [here](https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87) if you would like to try your own functions. It would be interesting to modify the code to visualize more recent algorithms like [Eve](https://arxiv.org/abs/1611.01505) or [YellowFin](https://arxiv.org/abs/1706.03471) although it is unclear whether they would differ significantly from SGD on these toy problems.
 
 ## Interesting observations
 
 The above function is given by
 
-$$ f(x, y) =  x^2 + y^2 - a \exp(-((x - 1)^2 + y^2)) - b \exp(-((x + 1)^2 + y^2)) $$
+$$ f(x, y) =  x^2 + y^2 - a e^{-((x - 1)^2 + y^2)} - b e^{-((x + 1)^2 + y^2)} $$
 
-It is basically a quadratic "bowl" with two gaussians creating local minima at (1, 0) and (-1, 0) respectively. The size of these minima is controlled by the \(a\) and \(b\) parameters.
-Even though this function is very simple there are a few interesting things happening.
+It is basically a quadratic "bowl" with two gaussians creating local minima at (1, 0) and (-1, 0) respectively. The size of these minima is controlled by the $a$ and $b$ parameters.
+Even though this function is very simple there are a couple of interesting things happening.
 
 ### Different minima
+
+Starting from the same point different algorithms will converge to different minima. Often, SGD and SGD with momentum will converge to the larger minimum (the one on the right) while RMSProp and Adam will converge to the global minimum. For this particular function, Adam is the algorithm that converges to the global minimum from most initializations.
 
 ### The effects of momentum
 
 
+
 ## Classic optimization test functions
 
-There are several functions
+There are several functions.
+Rastrigin, Rosenbrock
 
 
 
@@ -83,7 +89,7 @@ circle:hover {
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script>
 
-var width = 960,
+var width = 720,
     height = 500,
     nx = parseInt(width / 5), // grid sizes
     ny = parseInt(height / 5),
