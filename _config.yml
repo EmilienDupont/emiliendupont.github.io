@@ -7,8 +7,8 @@ permalink:        pretty
 
 # Setup
 title:            Emilien Dupont
-tagline:
-description:      
+tagline:          Machine Learning
+description:      Machine Learning
 url:              https://emiliendupont.github.io
 baseurl:
 paginate:         5

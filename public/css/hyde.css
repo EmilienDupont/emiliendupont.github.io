@@ -65,7 +65,7 @@ html {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 10rem; // 18rem
+    width: 12rem; // 18rem
     text-align: left;
   }
 }
@@ -80,7 +80,7 @@ html {
   color: #fff;
   margin-top: 0;
   font-family: "Abril Fatface", serif;
-  font-size: 1.5rem; // 3.25
+  font-size: 3.25rem;
 }
 
 /* Sidebar nav */
