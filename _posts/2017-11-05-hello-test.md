@@ -29,9 +29,11 @@ Even though this function is very simple there are a couple of interesting thing
 
 Starting from the same point different algorithms will converge to different minima. Often, SGD and SGD with momentum will converge to the larger minimum (the one on the right) while RMSProp and Adam will converge to the global minimum. For this particular function, Adam is the algorithm that converges to the global minimum from most initializations.
 
+<img src="{{ site.url }}/imgs/optim_viz_only_adam.png" style="align:center; width:150px; height:150px;">
+
 ### The effects of momentum
 
-
+<img src="{{ site.url }}/imgs/optim_viz_momentum.png" style="align:center; width:150px; height:150px;">
 
 ## Classic optimization test functions
 
