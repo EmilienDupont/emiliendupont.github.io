@@ -7,7 +7,7 @@ comments: true
 It is often difficult to understand exactly what happens during optimization in deep learning. One way to do this is to visualize the optimization paths on simple non convex functions.
 
 
-<p style="text-align: center;">**Click anywhere on the function contour to start a minimization.**</p>
+**<p style="text-align: center;">Click anywhere on the function contour to start a minimization.</p>**
 
 You can toggle the different algorithms by clicking the circles in the lower bar.
 >The code is available [here](https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87)
