@@ -6,15 +6,21 @@ comments: true
 
 It is often difficult to understand exactly what happens during optimization in deep learning. One way to do this is to visualize the optimization paths on simple non convex functions.
 
-> Click anywhere on the function heatmap to start a minimization.
 
-You can toggle the different algorithms by clicking on the circles in the lower bar. The algorithms are
+**Click anywhere on the function contour to start a minimization.**
+
+
+You can toggle the different algorithms by clicking the circles in the lower bar. For more information about the algorithms:
 * [Stochastic Gradient Descent (SGD)](https://en.wikipedia.org/wiki/Stochastic_gradient_descent)
 * [SGD with Momentum](https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Momentum)
 * [RMSProp](http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf)
 * [Adam](http://arxiv.org/abs/1412.6980)
 
-The code is available [here](https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87) if you would like to try your own functions. It would be interesting to modify the code to visualize more recent algorithms like [Eve](https://arxiv.org/abs/1611.01505) or [YellowFin](https://arxiv.org/abs/1706.03471) although it is unclear whether they would differ significantly from SGD on these toy problems.
+<div class="message">
+The code is available [here](https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87).
+</div>
+
+It would be interesting to try different functions or to modify the code to visualize more recent algorithms like [Eve](https://arxiv.org/abs/1611.01505) or [YellowFin](https://arxiv.org/abs/1706.03471) although it is unclear whether they would differ significantly from SGD on these toy problems.
 
 ## Interesting observations
 
@@ -22,23 +28,38 @@ The above function is given by
 
 $$ f(x, y) =  x^2 + y^2 - a e^{-((x - 1)^2 + y^2)} - b e^{-((x + 1)^2 + y^2)} $$
 
-It is basically a quadratic "bowl" with two gaussians creating local minima at (1, 0) and (-1, 0) respectively. The size of these minima is controlled by the $a$ and $b$ parameters.
+It is basically a quadratic "bowl" with two gaussians creating minima at (1, 0) and (-1, 0) respectively. The size of these minima is controlled by the $ a $ and $ b $ parameters.
 Even though this function is very simple there are a couple of interesting things happening.
 
-### Different minima
+#### Different minima
 
-Starting from the same point different algorithms will converge to different minima. Often, SGD and SGD with momentum will converge to the larger minimum (the one on the right) while RMSProp and Adam will converge to the global minimum. For this particular function, Adam is the algorithm that converges to the global minimum from most initializations.
+Starting from the same point different algorithms will converge to different minima. Often, SGD and SGD with momentum will converge to the poorer minimum (the one on the right) while RMSProp and Adam will converge to the global minimum. For this particular function, Adam is the algorithm that converges to the global minimum from most initializations.
 
-<img src="{{ site.url }}/imgs/optim_viz_only_adam.png" style="align:center; width:150px; height:150px;">
+<img src="{{ site.url }}/imgs/optim_viz_only_adam.png" style="align:center; width:300px;">
 
-### The effects of momentum
+#### The effects of momentum
 
-<img src="{{ site.url }}/imgs/optim_viz_momentum.png" style="align:center; width:150px; height:150px;">
+
+
+<img src="{{ site.url }}/imgs/optim_viz_momentum.png" style="align:center; width:300px;">
+
+#### Standard SGD does not get you far
+
+
 
 ## Classic optimization test functions
 
-There are several functions.
-Rastrigin, Rosenbrock
+There are many famous [test functions for optimization](https://en.wikipedia.org/wiki/Test_functions_for_optimization) which are useful for testing convergence, precision, robustness and performance of optimization algorithms. I implemented interactive visualizations for two of these functions as they showcase interesting behaviour which does not appear in the above function. The visualizations can be found here: [Rastrigin function]() and [Rosenbrock function]().
+
+#### Rastrigin
+
+A [Rastrigin function](https://en.wikipedia.org/wiki/Rastrigin_function) is a quadratic bowl with a grid of sine bumps of top which create a large number of local minima. In this example, SGD with momentum outperforms all other algorithms using the default parameter settings. The speed built up from the momentum allows it to power through the sine bumps and converge to the global minimum when other algorithms don't. Of course, this would not necessarily be the case if the sine bumps had been scaled or spaced differently, but it is interesting to
+
+#### Rosenbrock
+
+Adaptive learning rate algorithms sometimes "slow down" too much when it is safe to go fast.
+
+In general well tuned SGD with momentum works better than adaptive algorithms. However, it is difficult to change learning rate. To read more about optimization algorithms in deep learning I also recommend this great blog post.
 
 
 
