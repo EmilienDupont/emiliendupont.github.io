@@ -42,7 +42,7 @@ Starting from the same point, different algorithms will converge to different mi
 
 Spiralling towards the minimum.
 
-<img src="{{ site.url }}/imgs/optim_viz_momentum.png" style="align:center; width:300px;">
+<img src="{{ site.url }}/imgs/optim_viz_momentum.png" style="align:center; margin: 0 auto; width:500px;">
 
 #### Standard SGD does not get you far
 
@@ -56,10 +56,14 @@ There are many famous [test functions](https://en.wikipedia.org/wiki/Test_functi
 
 A [Rastrigin function](https://en.wikipedia.org/wiki/Rastrigin_function) is a quadratic bowl overlayed with a grid of sine bumps which create a large number of local minima. In this example, SGD with momentum outperforms all other algorithms using the default parameter settings. The speed built up from the momentum allows it to power through the sine bumps and converge to the global minimum when other algorithms don't. Of course, this would not necessarily be the case if the sine bumps had been scaled or spaced differently. But this shows that there is no single algorithm that will perform the best on all functions, even on these simple 2D cases.
 
+<img src="{{ site.url }}/imgs/optim_viz_rastrigin.gif" style="align:center; margin: 0 auto; width:640px;">
+
+
 #### Rosenbrock
 
 The [Rosenbrock function](https://en.wikipedia.org/wiki/Rosenbrock_function) has a single global minimum inside a parabolic shaped valley. Most algorithms rapidly converge to this valley, but it is typically difficult to converge to the global minimum within this valley.
 
+<img src="{{ site.url }}/imgs/optim_viz_rosenbrock.gif" style="align:center; margin: 0 auto; width:640px;">
 
 Adaptive learning rate algorithms sometimes "slow down" too much when it is safe to go fast.
 
