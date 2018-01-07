@@ -7,16 +7,17 @@ comments: true
 It is often difficult to understand exactly what happens during optimization in deep learning. One way to do this is to visualize the optimization paths on simple non convex functions.
 
 
-**Click anywhere on the function contour to start a minimization.**
+<p style="text-align: center;">**Click anywhere on the function contour to start a minimization.**</p>
+
+You can toggle the different algorithms by clicking the circles in the lower bar.
+>The code is available [here](https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87)
 
 
-You can toggle the different algorithms by clicking the circles in the lower bar. For more information about the algorithms:
+For more information about the algorithms:
 * [Stochastic Gradient Descent (SGD)](https://en.wikipedia.org/wiki/Stochastic_gradient_descent)
 * [SGD with Momentum](https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Momentum)
 * [RMSProp](http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf)
 * [Adam](http://arxiv.org/abs/1412.6980)
-
->The code is available [here](https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87) if you would like to try your own functions
 
 It would be interesting to modify the code to visualize more recent algorithms like [Eve](https://arxiv.org/abs/1611.01505) or [YellowFin](https://arxiv.org/abs/1706.03471) although it is unclear whether they would differ significantly from momentum SGD on these toy problems.
 
@@ -31,9 +32,11 @@ Even though this function is very simple there are a couple of interesting thing
 
 #### Different minima
 
-Starting from the same point different algorithms will converge to different minima. Often, SGD and SGD with momentum will converge to the poorer minimum (the one on the right) while RMSProp and Adam will converge to the global minimum. For this particular function, Adam is the algorithm that converges to the global minimum from most initializations.
+Starting from the same point, different algorithms will converge to different minima. Often, SGD and SGD with momentum will converge to the poorer minimum (the one on the right) while RMSProp and Adam will converge to the global minimum. For this particular function, Adam is the algorithm that converges to the global minimum from most initializations.
 
 <img src="{{ site.url }}/imgs/optim_viz_only_adam.png" style="align:center; width:300px;">
+
+
 
 #### The effects of momentum
 
