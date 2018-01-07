@@ -6,8 +6,7 @@ comments: true
 
 It is often difficult to understand exactly what happens during optimization in deep learning. One way to do this is to visualize the optimization paths on simple non convex functions.
 
-
-**<p style="text-align: center;">Click anywhere on the function contour to start a minimization.</p>**
+<p style="text-align: center; font-weight: bold;">Click anywhere on the function contour to start a minimization.</p>
 
 You can toggle the different algorithms by clicking the circles in the lower bar.
 >The code is available [here](https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87)
@@ -34,7 +33,8 @@ Even though this function is very simple there are a couple of interesting thing
 
 Starting from the same point, different algorithms will converge to different minima. Often, SGD and SGD with momentum will converge to the poorer minimum (the one on the right) while RMSProp and Adam will converge to the global minimum. For this particular function, Adam is the algorithm that converges to the global minimum from most initializations.
 
-<img src="{{ site.url }}/imgs/optim_viz_only_adam.png" style="align:center; width:300px;">
+<img src="{{ site.url }}/imgs/optim_viz_only_adam.png" style="align:center; margin: 0 auto; width:500px;">
+<p style="text-align: center; font-weight: bold;">Only Adam in green converges to global minimum.</p>
 
 
 
