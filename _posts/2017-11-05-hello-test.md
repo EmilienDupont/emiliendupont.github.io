@@ -20,7 +20,7 @@ For more information about the algorithms:
 
 It would be interesting to modify the code to visualize more recent algorithms like [Eve](https://arxiv.org/abs/1611.01505) or [YellowFin](https://arxiv.org/abs/1706.03471) although it is unclear whether they would differ significantly from momentum SGD on these toy problems.
 
-## Interesting observations
+---
 
 The above function is given by
 
@@ -34,7 +34,7 @@ Even though this function is very simple there are a couple of interesting thing
 Starting from the same point, different algorithms will converge to different minima. Often, SGD and SGD with momentum will converge to the poorer minimum (the one on the right) while RMSProp and Adam will converge to the global minimum. For this particular function, Adam is the algorithm that converges to the global minimum from most initializations.
 
 <img src="{{ site.url }}/imgs/optim_viz_only_adam.png" style="align:center; margin: 0 auto; width:500px;">
-<p style="text-align: center; font-weight: bold;">Only Adam in green converges to global minimum.</p>
+<p style="text-align: center; font-style: italic; font-size: 50%;">Only Adam in green converges to global minimum.</p>
 
 
 
@@ -64,11 +64,6 @@ The [Rosenbrock function](https://en.wikipedia.org/wiki/Rosenbrock_function) has
 Adaptive learning rate algorithms sometimes "slow down" too much when it is safe to go fast.
 
 In general well tuned SGD with momentum works better than adaptive algorithms. However, it is difficult to change learning rate. To read more about optimization algorithms in deep learning I also recommend this great [blog post](http://ruder.io/optimizing-gradient-descent/index.html).
-
-
-
-
-
 
 
 
