@@ -9,16 +9,12 @@ It is often difficult to understand exactly what happens during optimization in 
 <p style="text-align: center; font-weight: bold;">Click anywhere on the function contour to start a minimization.</p>
 
 You can toggle the different algorithms by clicking the circles in the lower bar.
->The code is available [here](https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87)
-
 
 For more information about the algorithms:
 * [Stochastic Gradient Descent (SGD)](https://en.wikipedia.org/wiki/Stochastic_gradient_descent)
 * [SGD with Momentum](https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Momentum)
 * [RMSProp](http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf)
 * [Adam](http://arxiv.org/abs/1412.6980)
-
-It would be interesting to modify the code to visualize more recent algorithms like [Eve](https://arxiv.org/abs/1611.01505) or [YellowFin](https://arxiv.org/abs/1706.03471) although it is unclear whether they would differ significantly from momentum SGD on these toy problems.
 
 ---
 
@@ -29,37 +25,39 @@ $$ f(x, y) =  x^2 + y^2 - a e^{-\frac{(x - 1)^2 + y^2}{c}} - b e^{-\frac{(x + 1)
 It is basically a quadratic "bowl" with two gaussians creating minima at (1, 0) and (-1, 0) respectively. The size of these minima is controlled by the $$ a $$ and $$ b $$ parameters.
 Even though this function is very simple there are a couple of interesting things happening.
 
-#### Different minima
+## Different minima
 
 Starting from the same point, different algorithms will converge to different minima. Often, SGD and SGD with momentum will converge to the poorer minimum (the one on the right) while RMSProp and Adam will converge to the global minimum. For this particular function, Adam is the algorithm that converges to the global minimum from most initializations.
 
 <img src="{{ site.url }}/imgs/optim_viz_only_adam.png" style="align:center; margin: 0 auto; width:500px;">
-<p style="text-align: center; font-style: italic; font-size: 50%;">Only Adam in green converges to global minimum.</p>
+<p style="text-align: center; font-style: italic; font-size: 80%;">Only Adam (in green) converges to the global minimum.</p>
 
 
-
-#### The effects of momentum
+## The effects of momentum
 
 Spiralling towards the minimum.
 
 <img src="{{ site.url }}/imgs/optim_viz_momentum.png" style="align:center; margin: 0 auto; width:500px;">
+<p style="text-align: center; font-style: italic; font-size: 80%;">SGD with momentum spiralling towards the minimum.</p>
 
-#### Standard SGD does not get you far
+## Standard SGD does not get you far
 
 SGD without momentum consistently performs the worst. I
+
+---
 
 ## Classic optimization test functions
 
 There are many famous [test functions](https://en.wikipedia.org/wiki/Test_functions_for_optimization) for optimization which are useful for testing convergence, precision, robustness and performance of optimization algorithms. I implemented interactive visualizations for two of these functions as they showcase interesting behaviour which does not appear in the above function. The visualizations can be found here: [Rastrigin function](https://bl.ocks.org/EmilienDupont/2141380d9332c37b52f8385ca225703f) and [Rosenbrock function](https://bl.ocks.org/EmilienDupont/f97a3902f4f3a98f350500a3a00371db).
 
-#### Rastrigin
+## Rastrigin
 
 A [Rastrigin function](https://en.wikipedia.org/wiki/Rastrigin_function) is a quadratic bowl overlayed with a grid of sine bumps which create a large number of local minima. In this example, SGD with momentum outperforms all other algorithms using the default parameter settings. The speed built up from the momentum allows it to power through the sine bumps and converge to the global minimum when other algorithms don't. Of course, this would not necessarily be the case if the sine bumps had been scaled or spaced differently. But this shows that there is no single algorithm that will perform the best on all functions, even on these simple 2D cases.
 
 <img src="{{ site.url }}/imgs/optim_viz_rastrigin.gif" style="align:center; margin: 0 auto; width:640px;">
 
 
-#### Rosenbrock
+## Rosenbrock
 
 The [Rosenbrock function](https://en.wikipedia.org/wiki/Rosenbrock_function) has a single global minimum inside a parabolic shaped valley. Most algorithms rapidly converge to this valley, but it is typically difficult to converge to the global minimum within this valley.
 
@@ -69,6 +67,11 @@ Adaptive learning rate algorithms sometimes "slow down" too much when it is safe
 
 In general well tuned SGD with momentum works better than adaptive algorithms. However, it is difficult to change learning rate. To read more about optimization algorithms in deep learning I also recommend this great [blog post](http://ruder.io/optimizing-gradient-descent/index.html).
 
+---
+
+>The code is available [here](https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87)
+
+It would be interesting to modify the code to visualize more recent algorithms like [Eve](https://arxiv.org/abs/1611.01505) or [YellowFin](https://arxiv.org/abs/1706.03471) although it is unclear whether they would differ significantly from momentum SGD on these toy problems.
 
 
 <style>
