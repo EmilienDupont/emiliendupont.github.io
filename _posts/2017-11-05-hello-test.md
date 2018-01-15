@@ -4,17 +4,14 @@ title: Interactive Visualization of Optimization Algorithms in Deep Learning
 comments: true
 ---
 
-It is often difficult to understand exactly what happens during optimization in deep learning. One way to do this is to visualize the optimization paths on simple non convex functions.
+Optimization on non convex function in very high dimensional spaces, like those we encounter in deep learning, can be hard to visualize. However, we can learn a lot by visualizing optimization paths on simple 2d non convex functions.
+
+<div id="optim-viz">
+</div>
 
 <p style="text-align: center; font-weight: bold;">Click anywhere on the function contour to start a minimization.</p>
 
-You can toggle the different algorithms by clicking the circles in the lower bar.
-
-For more information about the algorithms:
-* [Stochastic Gradient Descent (SGD)](https://en.wikipedia.org/wiki/Stochastic_gradient_descent)
-* [SGD with Momentum](https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Momentum)
-* [RMSProp](http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf)
-* [Adam](http://arxiv.org/abs/1412.6980)
+You can toggle the different algorithms by clicking the circles in the lower bar. The code is available [here](https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87).
 
 ---
 
@@ -23,9 +20,8 @@ The above function is given by
 $$ f(x, y) =  x^2 + y^2 - a e^{-\frac{(x - 1)^2 + y^2}{c}} - b e^{-\frac{(x + 1)^2 + y^2}{d}} $$
 
 It is basically a quadratic "bowl" with two gaussians creating minima at (1, 0) and (-1, 0) respectively. The size of these minima is controlled by the $$ a $$ and $$ b $$ parameters.
-Even though this function is very simple there are a couple of interesting things happening.
 
-## Different minima
+### Different minima
 
 Starting from the same point, different algorithms will converge to different minima. Often, SGD and SGD with momentum will converge to the poorer minimum (the one on the right) while RMSProp and Adam will converge to the global minimum. For this particular function, Adam is the algorithm that converges to the global minimum from most initializations.
 
@@ -33,45 +29,48 @@ Starting from the same point, different algorithms will converge to different mi
 <p style="text-align: center; font-style: italic; font-size: 80%;">Only Adam (in green) converges to the global minimum.</p>
 
 
-## The effects of momentum
+### The effects of momentum
 
 Spiralling towards the minimum.
 
 <img src="{{ site.url }}/imgs/optim_viz_momentum.png" style="align:center; margin: 0 auto; width:500px;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">SGD with momentum spiralling towards the minimum.</p>
 
-## Standard SGD does not get you far
+### Standard SGD does not get you far
 
-SGD without momentum consistently performs the worst. I
+SGD without momentum consistently performs the worst.
 
 ---
 
 ## Classic optimization test functions
 
-There are many famous [test functions](https://en.wikipedia.org/wiki/Test_functions_for_optimization) for optimization which are useful for testing convergence, precision, robustness and performance of optimization algorithms. I implemented interactive visualizations for two of these functions as they showcase interesting behaviour which does not appear in the above function. The visualizations can be found here: [Rastrigin function](https://bl.ocks.org/EmilienDupont/2141380d9332c37b52f8385ca225703f) and [Rosenbrock function](https://bl.ocks.org/EmilienDupont/f97a3902f4f3a98f350500a3a00371db).
+There are many famous [test functions](https://en.wikipedia.org/wiki/Test_functions_for_optimization) for optimization which are useful for testing convergence, precision, robustness and performance of optimization algorithms. They also exhibit interesting behaviour which does not appear in the above function.
 
-## Rastrigin
+### Rastrigin
 
-A [Rastrigin function](https://en.wikipedia.org/wiki/Rastrigin_function) is a quadratic bowl overlayed with a grid of sine bumps which create a large number of local minima. In this example, SGD with momentum outperforms all other algorithms using the default parameter settings. The speed built up from the momentum allows it to power through the sine bumps and converge to the global minimum when other algorithms don't. Of course, this would not necessarily be the case if the sine bumps had been scaled or spaced differently. But this shows that there is no single algorithm that will perform the best on all functions, even on these simple 2D cases.
+>The visualization for this function can be found [here](https://bl.ocks.org/EmilienDupont/2141380d9332c37b52f8385ca225703f)
+
+A [Rastrigin function](https://en.wikipedia.org/wiki/Rastrigin_function) is a quadratic bowl overlayed with a grid of sine bumps creating a large number of local minima.
 
 <img src="{{ site.url }}/imgs/optim_viz_rastrigin.gif" style="align:center; margin: 0 auto; width:640px;">
+<p style="text-align: center; font-style: italic; font-size: 80%;">SGD with momentum reaches the global optimum while all other algorithms get stuck in the same local minimum.</p>
 
+In this example, SGD with momentum outperforms all other algorithms using the default parameter settings. The speed built up from the momentum allows it to power through the sine bumps and converge to the global minimum when other algorithms don't. Of course, this would not necessarily be the case if the sine bumps had been scaled or spaced differently. On the first function Adam performed the best, so this shows that there is no single algorithm that will perform the best on all functions, even on simple 2D cases.
 
-## Rosenbrock
+### Rosenbrock
+
+>The visualization for this function can be found [here](https://bl.ocks.org/EmilienDupont/f97a3902f4f3a98f350500a3a00371db)
 
 The [Rosenbrock function](https://en.wikipedia.org/wiki/Rosenbrock_function) has a single global minimum inside a parabolic shaped valley. Most algorithms rapidly converge to this valley, but it is typically difficult to converge to the global minimum within this valley.
 
 <img src="{{ site.url }}/imgs/optim_viz_rosenbrock.gif" style="align:center; margin: 0 auto; width:640px;">
+<p style="text-align: center; font-style: italic; font-size: 80%;">All algorithms find the global minimum but through very different paths</p>
 
-Adaptive learning rate algorithms sometimes "slow down" too much when it is safe to go fast.
-
-In general well tuned SGD with momentum works better than adaptive algorithms. However, it is difficult to change learning rate. To read more about optimization algorithms in deep learning I also recommend this great [blog post](http://ruder.io/optimizing-gradient-descent/index.html).
+While all algorithms converge to the optimum, the adaptive optimization algorithms approach the minimum from a very . In higher dimensional problems, like in deep learning, different optimization algorithms will likely explore very different areas of parameter space.
 
 ---
 
->The code is available [here](https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87)
-
-It would be interesting to modify the code to visualize more recent algorithms like [Eve](https://arxiv.org/abs/1611.01505) or [YellowFin](https://arxiv.org/abs/1706.03471) although it is unclear whether they would differ significantly from momentum SGD on these toy problems.
+In general well tuned SGD with momentum works better than adaptive algorithms. However, it is difficult to change learning rate. To read more about optimization algorithms in deep learning I also recommend this great [blog post](http://ruder.io/optimizing-gradient-descent/index.html). It would also be interesting to modify the code to visualize more recent algorithms like [Eve](https://arxiv.org/abs/1611.01505) or [YellowFin](https://arxiv.org/abs/1706.03471) although it is unclear whether they would differ significantly from momentum SGD on these toy problems.
 
 
 <style>
@@ -112,7 +111,6 @@ circle:hover {
 }
 </style>
 
-<div id="optim-viz">
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/d3-contour.v1.min.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
@@ -390,4 +388,3 @@ function minimize(x0,y0) {
     }
 }
 </script>
-</div>
