@@ -4,7 +4,7 @@ title: Interactive Visualization of Optimization Algorithms in Deep Learning
 comments: true
 ---
 
-Optimization on non convex function in very high dimensional spaces, like those we encounter in deep learning, can be hard to visualize. However, we can learn a lot by visualizing optimization paths on simple 2d non convex functions.
+Optimization on non convex functions in high dimensional spaces, like those encountered in deep learning, can be hard to visualize. However, we can learn a lot from visualizing optimization paths on simple 2d non convex functions.
 
 <div id="optim-viz">
 </div>
@@ -14,6 +14,8 @@ Optimization on non convex function in very high dimensional spaces, like those 
 You can toggle the different algorithms by clicking the circles in the lower bar. The code is available [here](https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87).
 
 ---
+
+## Observations
 
 The above function is given by
 
@@ -31,14 +33,14 @@ Starting from the same point, different algorithms will converge to different mi
 
 ### The effects of momentum
 
-Spiralling towards the minimum.
+Augmenting SGD with momentum has [many advantages](https://distill.pub/2017/momentum/) and often works better than the other standard algorithms for an appropriately chosen learning rate (check out this [paper](https://arxiv.org/abs/1705.08292) for more details). However, with the wrong learning rate, SGD with momentum can overshoot minima and we often a spiraling pattern around the minimum.
 
 <img src="{{ site.url }}/imgs/optim_viz_momentum.png" style="align:center; margin: 0 auto; width:500px;">
-<p style="text-align: center; font-style: italic; font-size: 80%;">SGD with momentum spiralling towards the minimum.</p>
+<p style="text-align: center; font-style: italic; font-size: 80%;">SGD with momentum spiraling towards the minimum.</p>
 
 ### Standard SGD does not get you far
 
-SGD without momentum consistently performs the worst.
+SGD without momentum consistently performs the worst. The learning rate for SGD on the visualization is set to be artificially high (an order of magnitude higher than all the other algorithms) in order for the optimization to converge in a reasonable amount of time.
 
 ---
 
@@ -55,7 +57,7 @@ A [Rastrigin function](https://en.wikipedia.org/wiki/Rastrigin_function) is a qu
 <img src="{{ site.url }}/imgs/optim_viz_rastrigin.gif" style="align:center; margin: 0 auto; width:640px;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">SGD with momentum reaches the global optimum while all other algorithms get stuck in the same local minimum.</p>
 
-In this example, SGD with momentum outperforms all other algorithms using the default parameter settings. The speed built up from the momentum allows it to power through the sine bumps and converge to the global minimum when other algorithms don't. Of course, this would not necessarily be the case if the sine bumps had been scaled or spaced differently. On the first function Adam performed the best, so this shows that there is no single algorithm that will perform the best on all functions, even on simple 2D cases.
+In this example, SGD with momentum outperforms all other algorithms using the default parameter settings. The speed built up from the momentum allows it to power through the sine bumps and converge to the global minimum when other algorithms don't. Of course, this would not necessarily be the case if the sine bumps had been scaled or spaced differently. Indeed, on the first function in this post, Adam performed the best and this goes to show that there is no single algorithm that will perform the best on all functions, even on simple 2D cases.
 
 ### Rosenbrock
 
@@ -66,11 +68,15 @@ The [Rosenbrock function](https://en.wikipedia.org/wiki/Rosenbrock_function) has
 <img src="{{ site.url }}/imgs/optim_viz_rosenbrock.gif" style="align:center; margin: 0 auto; width:640px;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">All algorithms find the global minimum but through very different paths</p>
 
-While all algorithms converge to the optimum, the adaptive optimization algorithms approach the minimum from a very . In higher dimensional problems, like in deep learning, different optimization algorithms will likely explore very different areas of parameter space.
+While all algorithms converge to the optimum, the adaptive optimization algorithms approach the minimum through different paths. In higher dimensional problems, like in deep learning, different optimization algorithms will likely explore very different areas of parameter space.
 
 ---
 
-In general well tuned SGD with momentum works better than adaptive algorithms. However, it is difficult to change learning rate. To read more about optimization algorithms in deep learning I also recommend this great [blog post](http://ruder.io/optimizing-gradient-descent/index.html). It would also be interesting to modify the code to visualize more recent algorithms like [Eve](https://arxiv.org/abs/1611.01505) or [YellowFin](https://arxiv.org/abs/1706.03471) although it is unclear whether they would differ significantly from momentum SGD on these toy problems.
+## Conclusion
+
+Optimization algorithms can exhibit interesting behaviour, even on simple 2d functions. Of course, there are also many phenomena which we cannot hope to visualize on simple 2d problems. [Understanding](http://opt-ml.org/) and [visualizing](https://arxiv.org/abs/1712.09913) optimization in deep learning in general is an active area of research. New optimization algorithms are also being developed and it would be interesting to modify the code to visualize more recent algorithms like [Eve](https://arxiv.org/abs/1611.01505) or [YellowFin](https://arxiv.org/abs/1706.03471) although it is unclear whether they would differ significantly from momentum SGD on these toy problems.
+
+>For more visualizations like this, have a look at my [blocks](https://bl.ocks.org/EmilienDupont).
 
 
 <style>
