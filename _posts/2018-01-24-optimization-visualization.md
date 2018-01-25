@@ -25,7 +25,7 @@ It is basically a quadratic "bowl" with two gaussians creating minima at (1, 0) 
 
 ### Different minima
 
-Starting from the same point, different algorithms will converge to different minima. Often, SGD and SGD with momentum will converge to the poorer minimum (the one on the right) while RMSProp and Adam will converge to the global minimum. For this particular function, Adam is the algorithm that converges to the global minimum from most initializations.
+Starting from the same point, different algorithms will converge to different minima. Often, SGD and SGD with momentum will converge to the poorer minimum (the one on the right) while RMSProp and Adam will converge to the global minimum. For this particular function, Adam is the algorithm that converges to the global minimum from the most initializations.
 
 <img src="{{ site.url }}/imgs/optim_viz_only_adam.png" style="align:center; margin: 0 auto; width:500px;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">Only Adam (in green) converges to the global minimum.</p>
@@ -57,7 +57,7 @@ A [Rastrigin function](https://en.wikipedia.org/wiki/Rastrigin_function) is a qu
 <img src="{{ site.url }}/imgs/optim_viz_rastrigin.gif" style="align:center; margin: 0 auto; width:640px;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">SGD with momentum reaches the global optimum while all other algorithms get stuck in the same local minimum.</p>
 
-In this example, SGD with momentum outperforms all other algorithms using the default parameter settings. The speed built up from the momentum allows it to power through the sine bumps and converge to the global minimum when other algorithms don't. Of course, this would not necessarily be the case if the sine bumps had been scaled or spaced differently. Indeed, on the first function in this post, Adam performed the best and this goes to show that there is no single algorithm that will perform the best on all functions, even on simple 2D cases.
+In this example, SGD with momentum outperforms all other algorithms using the default parameter settings. The speed built up from the momentum allows it to power through the sine bumps and converge to the global minimum when other algorithms don't. Of course, this would not necessarily be the case if the sine bumps had been scaled or spaced differently. Indeed, on the first function in this post, Adam performed the best while SGD with momentum performs the best on this Rastrigin function. This shows that there is no single algorithm that will perform the best on all functions, even in simple 2D cases.
 
 ### Rosenbrock
 
@@ -68,16 +68,13 @@ The [Rosenbrock function](https://en.wikipedia.org/wiki/Rosenbrock_function) has
 <img src="{{ site.url }}/imgs/optim_viz_rosenbrock.gif" style="align:center; margin: 0 auto; width:640px;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">All algorithms find the global minimum but through very different paths</p>
 
-While all algorithms converge to the optimum, the adaptive optimization algorithms approach the minimum through different paths. In higher dimensional problems, like in deep learning, different optimization algorithms will likely explore very different areas of parameter space.
+While all algorithms converge to the optimum, the adaptive and non adaptive optimization algorithms approach the minimum through different paths. In higher dimensional problems, like in deep learning, different optimization algorithms will likely explore very different areas of parameter space.
 
 ---
 
 ## Conclusion
 
-Optimization algorithms can exhibit interesting behaviour, even on simple 2d functions. Of course, there are also many phenomena which we cannot hope to visualize on simple 2d problems. [Understanding](http://opt-ml.org/) and [visualizing](https://arxiv.org/abs/1712.09913) optimization in deep learning in general is an active area of research. New optimization algorithms are also being developed and it would be interesting to modify the code to visualize more recent algorithms like [Eve](https://arxiv.org/abs/1611.01505) or [YellowFin](https://arxiv.org/abs/1706.03471) although it is unclear whether they would differ significantly from momentum SGD on these toy problems.
-
->For more visualizations like this, have a look at my [blocks](https://bl.ocks.org/EmilienDupont).
-
+Optimization algorithms can exhibit interesting behaviour, even on simple 2d functions. Of course, there are also many phenomena which we cannot hope to visualize on simple 2d problems. [Understanding](http://opt-ml.org/) and [visualizing](https://arxiv.org/abs/1712.09913) optimization in deep learning in general is an active area of research. New optimization algorithms, like [Eve](https://arxiv.org/abs/1611.01505) or [YellowFin](https://arxiv.org/abs/1706.03471), are also being developed. It would be interesting to modify the above code to visualize these more recent algorithms, although it is unclear whether they would differ significantly from momentum SGD on these toy problems.
 
 <style>
 .sgd {
