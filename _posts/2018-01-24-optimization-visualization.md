@@ -33,14 +33,14 @@ Starting from the same point, different algorithms will converge to different mi
 
 ### The effects of momentum
 
-Augmenting SGD with momentum has [many advantages](https://distill.pub/2017/momentum/) and often works better than the other standard algorithms for an appropriately chosen learning rate (check out this [paper](https://arxiv.org/abs/1705.08292) for more details). However, with the wrong learning rate, SGD with momentum can overshoot minima and we often a spiraling pattern around the minimum.
+Augmenting SGD with momentum has [many advantages](https://distill.pub/2017/momentum/) and often works better than the other standard algorithms for an appropriately chosen learning rate (check out this [paper](https://arxiv.org/abs/1705.08292) for more details). However, with the wrong learning rate, SGD with momentum can overshoot minima and this often leads to a spiraling pattern around the minimum.
 
 <img src="{{ site.url }}/imgs/optim_viz_momentum.png" style="align:center; margin: 0 auto; width:500px;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">SGD with momentum spiraling towards the minimum.</p>
 
 ### Standard SGD does not get you far
 
-SGD without momentum consistently performs the worst. The learning rate for SGD on the visualization is set to be artificially high (an order of magnitude higher than all the other algorithms) in order for the optimization to converge in a reasonable amount of time.
+SGD without momentum consistently performs the worst. The learning rate for SGD on the visualization is set to be artificially high (an order of magnitude higher than the other algorithms) in order for the optimization to converge in a reasonable amount of time.
 
 ---
 
@@ -57,7 +57,7 @@ A [Rastrigin function](https://en.wikipedia.org/wiki/Rastrigin_function) is a qu
 <img src="{{ site.url }}/imgs/optim_viz_rastrigin.gif" style="align:center; margin: 0 auto; width:640px;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">SGD with momentum reaches the global optimum while all other algorithms get stuck in the same local minimum.</p>
 
-In this example, SGD with momentum outperforms all other algorithms using the default parameter settings. The speed built up from the momentum allows it to power through the sine bumps and converge to the global minimum when other algorithms don't. Of course, this would not necessarily be the case if the sine bumps had been scaled or spaced differently. Indeed, on the first function in this post, Adam performed the best while SGD with momentum performs the best on this Rastrigin function. This shows that there is no single algorithm that will perform the best on all functions, even in simple 2D cases.
+In this example, SGD with momentum outperforms all other algorithms using the default parameter settings. The speed built up from the momentum allows it to power through the sine bumps and converge to the global minimum when other algorithms don't. Of course, this would not necessarily be the case if the sine bumps had been scaled or spaced differently. Indeed, on the first function in this post, Adam performed the best while SGD with momentum performs the best on the Rastrigin function. This shows that there is no single algorithm that will perform the best on all functions, even in simple 2D cases.
 
 ### Rosenbrock
 
