@@ -390,4 +390,7 @@ function minimize(x0,y0) {
         draw_path(adam_data, "adam");
     }
 }
+
+// Start some minimization before click (to demonstrate how it works)
+minimize(scale_x(100), scale_y(100));
 </script>
