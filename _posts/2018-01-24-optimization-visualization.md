@@ -392,5 +392,5 @@ function minimize(x0,y0) {
 }
 
 // Start some minimization before click (to demonstrate how it works)
-minimize(scale_x(100), scale_y(20));
+// minimize(scale_x(100), scale_y(20));
 </script>
