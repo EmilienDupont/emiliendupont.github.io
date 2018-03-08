@@ -3,12 +3,12 @@ layout: page
 title: Contact
 ---
 
-LinkedIn://[emiliendupont](https://linkedin.com/in/emiliendupont)
+<i class="fa fa-linkedin"></i> LinkedIn/[emiliendupont](https://linkedin.com/in/emiliendupont)
 
-Github://[EmilienDupont](https://github.com/EmilienDupont)
+<i class="fa fa-github"></i> Github/[EmilienDupont](https://github.com/EmilienDupont)
 
-Twitter://[emidup](https://twitter.com/emidup)
+<i class="fa fa-twitter"></i> Twitter/[emidup](https://twitter.com/emidup)
 
-Google Scholar://[Emilien Dupont](https://scholar.google.com/citations?user=IY5WyIEAAAAJ&hl=en)
+<img src="{{ site.url }}/imgs/gscholar_icon.png" style="width:500px;"> Google Scholar/[Emilien Dupont](https://scholar.google.com/citations?user=IY5WyIEAAAAJ&hl=en)
 
-d3Blocks://[EmilienDupont](https://bl.ocks.org/EmilienDupont)
+<img src="{{ site.url }}/imgs/d3_icon.png" style="width:500px;"> d3 Blocks/[EmilienDupont](https://bl.ocks.org/EmilienDupont)
