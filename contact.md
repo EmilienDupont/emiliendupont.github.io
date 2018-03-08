@@ -9,6 +9,6 @@ title: Contact
 
 <i class="fa fa-twitter"></i> Twitter/[emidup](https://twitter.com/emidup)
 
-<img src="{{ site.url }}/imgs/gscholar_icon.png" style="float:left; width:16px;"> Google Scholar/[Emilien Dupont](https://scholar.google.com/citations?user=IY5WyIEAAAAJ&hl=en)
+<img src="{{ site.url }}/imgs/gscholar_icon.png" style="align: middle; width:16px;"> Google Scholar/[Emilien Dupont](https://scholar.google.com/citations?user=IY5WyIEAAAAJ&hl=en)
 
-<img src="{{ site.url }}/imgs/d3_icon.png" style="float:left; width:16px;"> d3 Blocks/[EmilienDupont](https://bl.ocks.org/EmilienDupont)
+<img src="{{ site.url }}/imgs/d3_icon.png" style="align: middle; width:16px;"> d3 Blocks/[EmilienDupont](https://bl.ocks.org/EmilienDupont)
