@@ -13,7 +13,7 @@ title: Home
     </h1>
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
-
+    <img src="{{ site.url }}/{{post.img_excerpt}}" style="align:center; width:500px;">
   </div>
   {% endfor %}
 </div>
