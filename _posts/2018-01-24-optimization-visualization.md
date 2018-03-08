@@ -2,7 +2,7 @@
 layout: post
 title: Interactive Visualization of Optimization Algorithms in Deep Learning
 comments: true
-img_excerpt: imgs/optim_viz_momentum.png
+img_excerpt: imgs/optim_viz_excerpt.png
 ---
 
 Optimization on non convex functions in high dimensional spaces, like those encountered in deep learning, can be hard to visualize. However, we can learn a lot from visualizing optimization paths on simple 2d non convex functions.
