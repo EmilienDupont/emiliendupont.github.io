@@ -19,7 +19,7 @@ The goal of this post is to show that:
 When doing classification we are often interested in building a discriminative model $$ p(y \vert x) $$, i.e. a model of the probability of a certain label $$ y $$ (e.g. digit type) given a datapoint $$ x $$ (e.g. an image of a digit). If we use data drawn from a distribution $$ p_{\text{train}}(x) $$ to train a discriminative model $$ p(y \vert x) $$, how will the trained model behave when we input an $$ x $$ that is very far from $$ p_{\text{train}}(x) $$? For example, if we train a model to predict digit type from an image of a digit, what happens when we put a picture of a chicken through this model?
 
 <img src="{{ site.url }}/imgs/mnist-chicken/digits-chicken-prob-map.png" style="align:center; margin: 0 auto; width:100%;">
-<p style="text-align: center; font-style: italic; font-size: 80%;">In the space of images, chickens lie far away from digits. This figure shows the distribution of digits in blue (corresponding to p_train in our case) and where an image of a chicken would lie relative to this.</p>
+<p style="text-align: center; font-style: italic; font-size: 80%;">In the space of images, chickens lie far away from digits. This figure shows the distribution of digits in blue (corresponding to training distribution in our case) and where an image of a chicken would lie relative to this.</p>
 
 ## Chicken probabilities under an MNIST model
 
@@ -28,9 +28,9 @@ To explore these problems, we train a simple convolutional neural network (CNN) 
 <img src="{{ site.url }}/imgs/mnist-chicken/mnistify-chicken.png" style="align:center; margin: 0 auto; width:100%;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">An MNIST-ified chicken. The CNN takes in 32 by 32 grayscale images, so we transform the image of the chicken to match this.</p>
 
-Ideally, the outputs $$ p(y \vert x) $$ would be approximately uniform, i.e. the probability of every class would be about 10%. This would mean that the CNN has little confidence that the chicken belongs to any of the 10 classes. However, for the above picture of a chicken, the probability of the label 5 is *99.9%*.
+Ideally, the outputs $$ p(y \vert x) $$ would be approximately uniform, i.e. the probability of every class would be about 10%. This would mean that the CNN has little confidence that the chicken belongs to any of the 10 classes. However, for the above picture of a chicken, the probability of the label 5 is **99.9%**.
 
-<img src="{{ site.url }}/imgs/mnist-chicken/expected-vs-actual-softmax.png" style="align:center; margin: 0 auto; width:50%;">
+<img src="{{ site.url }}/imgs/mnist-chicken/expected-vs-actual-softmax.png" style="align:center; margin: 0 auto; width:60%;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">Histograms of expected vs actual softmax class probabilities for an image of a chicken on an MNIST model.</p>
 
 The model is extremely confident that this chicken is the digit 5 even though, to a human, it clearly isn’t. Even worse, it is much more confident that this chicken is a 5 than many other digits that are actually a 5.
@@ -45,11 +45,11 @@ Of course, it could be that this image of a chicken is just a fluke and high con
 <img src="{{ site.url }}/imgs/mnist-chicken/mnist-and-fashion-examples.png" style="align:center; margin: 0 auto; width:60%;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">MNIST and FashionMNIST examples. The images are the same size and both contain 10 classes.</p>
 
-These images of course have nothing to do with digits, so again we would hope that the model will only make low confidence predictions. We predict $$ p(y \vert x) $$ for 10000 images from the Fashion MNIST dataset using the trained MNIST model and measure the fraction of them which have a high confidence prediction (i.e. where the maximum probability of a certain class $$ \max_y p(y \vert x) $$ is very high). The results are shown below:
+These images have nothing to do with digits, so again we would hope that the model will only make low confidence predictions. We predict $$ p(y \vert x) $$ for 10000 images from the Fashion MNIST dataset using the trained MNIST model and measure the fraction of them which have a high confidence prediction (i.e. where the maximum probability of a certain class $$ \max_y p(y \vert x) $$ is very high). The results are shown below:
 
-* *63.4%* of examples have more than *99%* confidence
-* *74.3%* of examples have more than *95%* confidence
-* *88.9%* of examples have more than *75%* confidence
+* **63.4%** of examples have more than **99%** confidence
+* **74.3%** of examples have more than **95%** confidence
+* **88.9%** of examples have more than **75%** confidence
 
 Almost two thirds of the Fashion MNIST dataset is classified as a certain digit type with more than 99% confidence. This shows that neural nets can consistently make confident predictions about unseen data and that using the output probabilities as a measure of confidence does not make much sense, at least on data that is very far from the training data.
 
@@ -71,8 +71,11 @@ It seems clear that we can’t solely rely on modeling $$ p(y \vert x) $$ when d
 One way to solve this problem is to not only model $$ p(y \vert x) $$ but to also model $$ p_{\text{train}}(x) $$. If we can model $$ p_{\text{train}}(x) $$ and we get a new sample $$ x_{\text{test}} $$, we can first check whether this sample is probable under $$ p_{\text{train}}(x) $$. If it is, we have seen something similar before so we should go ahead and predict $$ p(y \vert x) $$, otherwise we can reject this sample.
 
 If $$ p_{\text{train}}(x_{\text{test}}) < 0.1 $$:
+
 &nbsp;&nbsp;&nbsp;&nbsp;Return no prediction
+
 Else:
+
 &nbsp;&nbsp;&nbsp;&nbsp;Return $$ p(y|x_{\text{test}}) $$
 
 <p style="text-align: center; font-style: italic; font-size: 80%;">Simple algorithm for returning meaningful predictions.</p>
@@ -109,7 +112,7 @@ As can be seen the separation is much cleaner than when using the maximum class 
 
 ## Conclusion
 
-In this post we used the toy example of chickens and digits to show that a deep learning model can make confident, but meaningless, predictions on data it has never seen. Not only does a chicken get confidently classified as a 5 by an MNIST model, other natural images such as fashion items consistently fool the classifier into making high confidence predictions. We showed that modeling $$ p(x) $$ with a VAE is a simple solution can that partially mitigate this problem. However, solving this problem and, more generally, modeling [uncertainty in deep learning](http://mlg.eng.cam.ac.uk/yarin/thesis/thesis.pdf) is still an important area of research.
+In this post we used the toy example of chickens and digits to show that a deep learning model can make confident, but meaningless, predictions on data it has never seen. Not only does a chicken get confidently classified as a 5 by an MNIST model, other natural images such as fashion items consistently fool the classifier into making high confidence predictions. We showed that modeling $$ p(x) $$ with a VAE is a simple solution can that partially mitigate this problem. However, solving this problem and, more generally, modeling [uncertainty in deep learning](http://mlg.eng.cam.ac.uk/yarin/thesis/thesis.pdf) is an important area of research.
 
 #### Footnotes
 <a name="footnote1">1</a>. The idea of putting a picture of a chicken through an MNIST model initially came from a question on the [Approximate Inference](http://approximateinference.org/) panel I attended at NIPS 2017
