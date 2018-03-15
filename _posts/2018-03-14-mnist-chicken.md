@@ -11,7 +11,7 @@ This problem does not just relate to chickens and digits but the fact that a neu
 
 The goal of this post is to show that:
 1. A neural net can make very confident predictions about data it has never seen
-2. Softmax class probabilities $$ p(y|x) $$ are not useful as a confidence measure
+2. Softmax class probabilities $$ p(y \vert x) $$ are not useful as a confidence measure
 3. When doing classification, we should not just model the class probabilities but also the data $$ p(x) $$
 
 ## Discriminative models and unseen data
