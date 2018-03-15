@@ -76,7 +76,7 @@ One way to solve this problem is to not only model $$ p(y \vert x) $$ but to als
 <img src="{{ site.url }}/imgs/mnist-chicken/algorithm.png" style="align:center; margin: 0 auto; width:40%;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">Simple algorithm for returning meaningful predictions.</p>
 
-There are several ways of modeling p(x). In this post, we will focus on [variational autoencoders](https://arxiv.org/abs/1312.6114) (VAE) which have been quite successful at modeling distribution of images.
+There are several ways of modeling p(x). In this post, we will focus on [variational autoencoders](https://arxiv.org/abs/1312.6114) (VAE) which have been quite successful at modeling distributions of images.
 
 ## Variational Autoencoders to model p(x)
 
@@ -108,11 +108,11 @@ As can be seen the separation is much cleaner than when using the maximum class 
 
 ## Conclusion
 
-In this post we used the toy example of chickens and digits to show that a deep learning model can make confident, but meaningless, predictions on data it has never seen. Not only does a chicken get confidently classified as a 5 by an MNIST model, other natural images such as fashion items consistently fool the classifier into making high confidence predictions. We showed that modeling $$ p(x) $$ with a VAE is a simple solution can that partially mitigate this problem. However, solving this problem and, more generally, modeling [uncertainty in deep learning](http://mlg.eng.cam.ac.uk/yarin/thesis/thesis.pdf) is an important area of research.
+In this post we used the toy example of chickens and digits to show that a deep learning model can make confident, but meaningless, predictions on data it has never seen. Not only does a chicken get confidently classified as a 5 by an MNIST model, other natural images such as fashion items consistently fool the classifier into making high confidence predictions. We showed that modeling $$ p(x) $$ with a VAE is a simple solution that can partially mitigate this problem. However, solving this problem and, more generally, modeling [uncertainty in deep learning](http://mlg.eng.cam.ac.uk/yarin/thesis/thesis.pdf) is an important area of research.
 
 #### Footnotes
-<a name="footnote1">1</a>. The idea of putting a picture of a chicken through an MNIST model initially came from a question on the [Approximate Inference](http://approximateinference.org/) panel I attended at NIPS 2017
+<a name="footnote1">1</a>. The idea of putting a picture of a chicken through an MNIST model initially came from a question I heard on the [Approximate Inference](http://approximateinference.org/) panel at NIPS 2017
 
 <a name="footnote2">2</a>. I always resize MNIST from 28 by 28 to 32 by 32 because powers of 2 are nice
 
-<a name="footnote3">3</a>. The word confidence is used loosely here and is not related to confidence in the [statistical sense](https://en.wikipedia.org/wiki/Confidence_interval). However $$ \max_y p(y \vert x) $$ is commonly used to show that a model is “confident” about its predictions and this is how we use it here.
+<a name="footnote3">3</a>. The word confidence is used loosely here and is not related to confidence in the [statistical sense](https://en.wikipedia.org/wiki/Confidence_interval). However $$ \max_y p(y \vert x) $$ is commonly used to show that a model is “confident” about its predictions and this is how we use it here
