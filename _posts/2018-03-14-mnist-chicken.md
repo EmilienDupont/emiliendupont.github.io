@@ -76,7 +76,7 @@ If $$ p_{\text{train}}(x_{\text{test}}) < 0.1 $$:
 
 Else:
 
-&nbsp;&nbsp;&nbsp;&nbsp;Return $$ p(y|x_{\text{test}}) $$
+&nbsp;&nbsp;&nbsp;&nbsp;Return $$ p(y \vert x_{\text{test}}) $$
 
 <p style="text-align: center; font-style: italic; font-size: 80%;">Simple algorithm for returning meaningful predictions.</p>
 
