@@ -23,15 +23,15 @@ When doing classification we are often interested in building a discriminative m
 
 ## Chicken probabilities under an MNIST model
 
-To explore these problems, we train a simple convolutional neural network (CNN) on MNIST which gets about 98% testing accuracy. We would then like to see what happens to the output probabilities $$ p(y \vert x) $$ of the trained model when shown images that are completely different from digits. As an example, we pass an “MNIST-ified” chicken through the model.
+To explore these problems, we train a simple convolutional neural network (CNN) on MNIST which gets about 98% testing accuracy. We would then like to see what happens to the output probabilities $$ p(y \vert x) $$ of the trained model when shown images that are completely different from digits. As an example, we pass an “MNIST-ified” chicken through the model.<sup>[2](#myfootnote2)</sup>
 
 <img src="{{ site.url }}/imgs/mnist-chicken/mnistify-chicken.png" style="align:center; margin: 0 auto; width:100%;">
-<p style="text-align: center; font-style: italic; font-size: 80%;">An MNIST-ified chicken. The CNN takes in 32 by 32 grayscale images<sup>[2](#myfootnote2)</sup>, so we transform the image of the chicken to match this.</p>
+<p style="text-align: center; font-style: italic; font-size: 80%;">An MNIST-ified chicken. The CNN takes in 32 by 32 grayscale images, so we transform the image of the chicken to match this.</p>
 
-Ideally, the outputs $$ p(y \vert x) $$ would be approximately uniform, i.e. the probability of every class would be about 10%. This would mean that the CNN has little confidence that the chicken belongs to any of the 10 classes. However, for the above picture of a chicken, the probability of the label 5 is 99.9%.
+Ideally, the outputs $$ p(y \vert x) $$ would be approximately uniform, i.e. the probability of every class would be about 10%. This would mean that the CNN has little confidence that the chicken belongs to any of the 10 classes. However, for the above picture of a chicken, the probability of the label 5 is *99.9%*.
 
 <img src="{{ site.url }}/imgs/mnist-chicken/expected-vs-actual-softmax.png" style="align:center; margin: 0 auto; width:50%;">
-<p style="text-align: center; font-style: italic; font-size: 80%;">Histograms of expected vs actual softmax class probabilities $$ p(y \vert x) $$ for an image of a chicken on an MNIST model.</p>
+<p style="text-align: center; font-style: italic; font-size: 80%;">Histograms of expected vs actual softmax class probabilities for an image of a chicken on an MNIST model.</p>
 
 The model is extremely confident that this chicken is the digit 5 even though, to a human, it clearly isn’t. Even worse, it is much more confident that this chicken is a 5 than many other digits that are actually a 5.
 
@@ -42,22 +42,18 @@ The model is extremely confident that this chicken is the digit 5 even though, t
 
 Of course, it could be that this image of a chicken is just a fluke and high confidence predictions for data outside of $$ p_{\text{train}}(x) $$ are rare. To test this, we use the [FashionMNIST](https://github.com/zalandoresearch/fashion-mnist) dataset which contains images of various types clothing.
 
-<img src="{{ site.url }}/imgs/mnist-chicken/mnist-and-fashion-examples.png" style="align:center; margin: 0 auto; width:50%;">
+<img src="{{ site.url }}/imgs/mnist-chicken/mnist-and-fashion-examples.png" style="align:center; margin: 0 auto; width:60%;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">MNIST and FashionMNIST examples. The images are the same size and both contain 10 classes.</p>
 
-These images of course have nothing to do with digits, so again we would hope that the model will only make low confidence predictions. We predict $$ p(y \vert x) $$ for 10000 images from the Fashion MNIST dataset using the trained MNIST model and measure the fraction of them which have a high confidence prediction (i.e. where the maximum probability of a certain class $$ \max_y(p(y \vert x)) $$ is very high). The results are shown below:
+These images of course have nothing to do with digits, so again we would hope that the model will only make low confidence predictions. We predict $$ p(y \vert x) $$ for 10000 images from the Fashion MNIST dataset using the trained MNIST model and measure the fraction of them which have a high confidence prediction (i.e. where the maximum probability of a certain class $$ \max_y p(y \vert x) $$ is very high). The results are shown below:
 
-<p style="text-align: center;">
-*63.4%* of examples have more than *99%* confidence
-
-*74.3%* of examples have more than *95%* confidence
-
-*88.9%* of examples have more than *75%* confidence
-</p>
+* *63.4%* of examples have more than *99%* confidence
+* *74.3%* of examples have more than *95%* confidence
+* *88.9%* of examples have more than *75%* confidence
 
 Almost two thirds of the Fashion MNIST dataset is classified as a certain digit type with more than 99% confidence. This shows that neural nets can consistently make confident predictions about unseen data and that using the output probabilities as a measure of confidence does not make much sense, at least on data that is very far from the training data.
 
-We can also look at how confident predictions<sup>[3](#myfootnote3)</sup> on the fashion items are compared to those on correctly classified digits. To do this, we draw a vertical pink line for every FashionMNIST image and a blue line for every MNIST image. We then sort the lines by the confidence of the prediction on the corresponding image. Ideally, the resulting plot would be all pink on the left and all blue on the right (i.e all MNIST examples have higher confidence than the FashionMNIST examples under an MNIST model). The actual results are shown below.
+We can also look at how confident<sup>[3](#myfootnote3)</sup> predictions on the fashion items are compared to those on correctly classified digits. To do this, we draw a vertical pink line for every FashionMNIST image and a blue line for every MNIST image. We then sort the lines by the confidence of the prediction on the corresponding image. Ideally, the resulting plot would be all pink on the left and all blue on the right (i.e all MNIST examples have higher confidence than the FashionMNIST examples under an MNIST model). The actual results are shown below.
 
 <img src="{{ site.url }}/imgs/mnist-chicken/cnn-confidence.png" style="align:center; margin: 0 auto; width:100%;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">Images sorted by confidence. The x-axis corresponds to increasing confidence and each vertical line to an image.</p>
@@ -74,23 +70,23 @@ It seems clear that we can’t solely rely on modeling $$ p(y \vert x) $$ when d
 
 One way to solve this problem is to not only model $$ p(y \vert x) $$ but to also model $$ p_{\text{train}}(x) $$. If we can model $$ p_{\text{train}}(x) $$ and we get a new sample $$ x_{\text{test}} $$, we can first check whether this sample is probable under $$ p_{\text{train}}(x) $$. If it is, we have seen something similar before so we should go ahead and predict $$ p(y \vert x) $$, otherwise we can reject this sample.
 
->If $$ p_{\text{train}}(x_{\text{test}}) < 0.1 $$:
->&nbsp;&nbsp;&nbsp;&nbsp;Return no prediction
->Else:
->&nbsp;&nbsp;&nbsp;&nbsp;Return $$ p(y|x_{\text{test}}) $$
+If $$ p_{\text{train}}(x_{\text{test}}) < 0.1 $$:
+&nbsp;&nbsp;&nbsp;&nbsp;Return no prediction
+Else:
+&nbsp;&nbsp;&nbsp;&nbsp;Return $$ p(y|x_{\text{test}}) $$
 
-<p style="text-align: center; font-style: italic; font-size: 80%;">Simple algorithm for returning meaningful predictions. This is related to [outlier detection](https://en.wikipedia.org/wiki/Anomaly_detection).</p>
+<p style="text-align: center; font-style: italic; font-size: 80%;">Simple algorithm for returning meaningful predictions.</p>
 
-There are several ways of modeling p(x). In this post, we will focus on (variational autoencoders)[https://arxiv.org/abs/1312.6114] (VAE) which have been quite successful at modeling distribution of images.
+There are several ways of modeling p(x). In this post, we will focus on [variational autoencoders](https://arxiv.org/abs/1312.6114) (VAE) which have been quite successful at modeling distribution of images.
 
 ## Variational Autoencoders to model p(x)
 
-VAEs are [generative models](https://en.wikipedia.org/wiki/Generative_model) that learn a joint model $$ p(x, z) $$ of the data $$ x $$ and some (latent variables)[https://en.wikipedia.org/wiki/Latent_variable] $$ z $$. As the name suggests, VAEs are closely related to [autoencoders](https://en.wikipedia.org/wiki/Autoencoder). VAEs work by encoding a datapoint $$ x $$ into a distribution $$ q(z \vert x) $$ of latent variables and then sampling a latent vector $$ z $$ from this distribution. The sample $$ z $$ is then decoded into a reconstruction of the encoded data $$ x $$. The encoder and decoder are typically neural networks.
+VAEs are [generative models](https://en.wikipedia.org/wiki/Generative_model) that learn a joint model $$ p(x, z) $$ of the data $$ x $$ and some [latent variables](https://en.wikipedia.org/wiki/Latent_variable) $$ z $$. As the name suggests, VAEs are closely related to [autoencoders](https://en.wikipedia.org/wiki/Autoencoder). VAEs work by encoding a datapoint $$ x $$ into a distribution $$ q(z \vert x) $$ of latent variables and then sampling a latent vector $$ z $$ from this distribution. The sample $$ z $$ is then decoded into a reconstruction of the encoded data $$ x $$. The encoder and decoder are typically neural networks.
 
-<img src="{{ site.url }}/imgs/mnist-chicken/vae.png" style="align:center; margin: 0 auto; width:30%;">
+<img src="{{ site.url }}/imgs/mnist-chicken/vae.png" style="align:center; margin: 0 auto; width:40%;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">Sketch of VAE architecture, sampling is shown with dashed lines.</p>
 
-Interestingly, VAEs optimize a lower bound on $$ \log p(x) $$called the [Evidence Lower Bound](https://arxiv.org/pdf/1601.00670.pdf) (ELBO).
+Interestingly, VAEs optimize a lower bound on $$ \log p(x) $$ called the [Evidence Lower Bound](https://arxiv.org/pdf/1601.00670.pdf) (ELBO).
 
 $$ \log p(x) >= \text{ELBO} = - \text{VAE loss} $$
 
@@ -98,10 +94,10 @@ So after training a VAE on data from $$ p_{\text{train}} $$, we can calculate th
 
 ## Reconstruction of a digit and a chicken
 
-To test this, we train a convolutional VAE on MNIST. Note that the ELBO is a sum of a [reconstruction error term and a KL divergence](https://arxiv.org/abs/1606.05908) term. So if an image is poorly reconstructed by the VAE, it will typically have low probability. The figure below shows reconstructions from the trained VAE.
+To test this, we train a convolutional VAE on MNIST. Note that the ELBO is the sum of a [reconstruction error term and a KL divergence](https://arxiv.org/abs/1606.05908) term. So if an image is poorly reconstructed by the VAE, it will typically have low probability. The figure below shows reconstructions from the trained VAE.
 
 <img src="{{ site.url }}/imgs/mnist-chicken/reconstructed-chicken.png" style="align:center; margin: 0 auto; width:50%;">
-<p style="text-align: center; font-style: italic; font-size: 80%;">A digit and a chicken reconstructed by a VAE trained on MNIST. As can be seen the digit is well reconstructed while the chicken is not. This suggests the chicken has low probability under $$ p_{\text{train}} $$.</p>
+<p style="text-align: center; font-style: italic; font-size: 80%;">A digit and a chicken reconstructed by a VAE trained on MNIST. As can be seen the digit is well reconstructed while the chicken is not. This suggests the chicken has low probability under the training distribution.</p>
 
 
 We can now use the VAE to predict the probability of 10000 FashionMNIST images and 10000 MNIST images under $$ p_{\text{train}} $$. Ideally, the probabilities of FashionMNIST examples would be considerably lower than all the MNIST examples and we would get a good separation between the two. The figure below shows the results, with sorted probabilities from lowest to highest.
@@ -120,4 +116,4 @@ In this post we used the toy example of chickens and digits to show that a deep 
 
 <a name="footnote2">2</a>. I always resize MNIST from 28 by 28 to 32 by 32 because powers of 2 are nice
 
-<a name="footnote3">3</a>. The word confidence is used loosely here and is not related to confidence in the [statistical sense](https://en.wikipedia.org/wiki/Confidence_interval). However $$ \max_y(p(y \vert x)) $$ is commonly used to show that a model is “confident” about its predictions and this is how we use it here.
+<a name="footnote3">3</a>. The word confidence is used loosely here and is not related to confidence in the [statistical sense](https://en.wikipedia.org/wiki/Confidence_interval). However $$ \max_y p(y \vert x) $$ is commonly used to show that a model is “confident” about its predictions and this is how we use it here.
