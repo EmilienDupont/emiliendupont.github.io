@@ -7,15 +7,10 @@ img_excerpt: imgs/mnist-chicken/mnist-chicken-excerpt.png
 
 When you put a picture of a chicken through a model trained on [MNIST](https://en.wikipedia.org/wiki/MNIST_database), the model is 99.9% confident that the chicken is a 5. That’s not good.
 
-<img src="{{ site.url }}/imgs/mnist-chicken/mnist-grid-with-chicken.png" style="align:center; margin: 0 auto; width:80%;">
-<p style="text-align: center; font-style: italic; font-size: 80%;">Images from MNIST and a chicken.</p>
-
 This problem does not just relate to chickens and digits but the fact that a neural net makes very confident predictions on data that does not come from the same distribution as the training data. While this example is artificial, it is common in practice for a machine learning model to be used on data that is very different from the data it was trained on. A self-driving car, for example, may encounter an unusual environment that was never seen during training. In such cases, the system should not be overly confident but instead let the driver know that it is not able to make a meaningful prediction.
 
-The goal of this post<sup>[1](#myfootnote1)</sup> is to show that:
-1. A neural net can make very confident predictions about data it has never seen
-2. Softmax class probabilities $$ p(y \vert x) $$ are not useful as a confidence measure
-3. When doing classification, we should not just model the class probabilities but also the data $$ p(x) $$
+<img src="{{ site.url }}/imgs/mnist-chicken/mnist-grid-with-chicken.png" style="align:center; margin: 0 auto; width:80%;">
+<p style="text-align: center; font-style: italic; font-size: 80%;">Images from MNIST and a chicken.</p>
 
 ## Discriminative models and unseen data
 
