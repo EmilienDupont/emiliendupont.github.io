@@ -7,10 +7,10 @@ img_excerpt: imgs/optim_viz_excerpt.png
 
 Optimization on non convex functions in high dimensional spaces, like those encountered in deep learning, can be hard to visualize. However, we can learn a lot from visualizing optimization paths on simple 2d non convex functions.
 
+<p style="text-align: center; font-weight: bold;">Click anywhere on the function contour to start a minimization.</p>
+
 <div id="optim-viz">
 </div>
-
-<p style="text-align: center; font-weight: bold;">Click anywhere on the function contour to start a minimization.</p>
 
 You can toggle the different algorithms by clicking the circles in the lower bar. The code is available [here](https://bl.ocks.org/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87).
 
