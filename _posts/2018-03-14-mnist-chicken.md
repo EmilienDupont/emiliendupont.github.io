@@ -7,7 +7,7 @@ img_excerpt: imgs/mnist-chicken/mnist-chicken-excerpt.png
 
 When you put a picture of a chicken through a model trained on [MNIST](https://en.wikipedia.org/wiki/MNIST_database), the model is 99.9% confident that the chicken is a 5. That’s not good.
 
-<img src="{{ site.url }}/imgs/mnist-chicken/mnist-grid-with-chicken.png" style="align:center; margin: 0 auto; width:100%;">
+<img src="{{ site.url }}/imgs/mnist-chicken/mnist-grid-with-chicken.png" style="align:center; margin: 0 auto; width:80%;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">Images from MNIST and a chicken.</p>
 
 This problem does not just relate to chickens and digits but the fact that a neural net makes very confident predictions on data that does not come from the same distribution as the training data. While this example is artificial, it is common in practice for a machine learning model to be used on data that is very different from the data it was trained on. A self-driving car, for example, may encounter an unusual environment that was never seen during training. In such cases, the system should not be overly confident but instead let the driver know that it is not able to make a meaningful prediction.
@@ -73,14 +73,7 @@ It seems clear that we can’t solely rely on modeling $$ p(y \vert x) $$ when d
 
 One way to solve this problem is to not only model $$ p(y \vert x) $$ but to also model $$ p_{\text{train}}(x) $$. If we can model $$ p_{\text{train}}(x) $$ and we get a new sample $$ x_{\text{test}} $$, we can first check whether this sample is probable under $$ p_{\text{train}}(x) $$. If it is, we have seen something similar before so we should go ahead and predict $$ p(y \vert x) $$, otherwise we can reject this sample.
 
-If $$ p_{\text{train}}(x_{\text{test}}) < 0.1 $$:
-
-&nbsp;&nbsp;&nbsp;&nbsp;Return no prediction
-
-Else:
-
-&nbsp;&nbsp;&nbsp;&nbsp;Return $$ p(y \vert x_{\text{test}}) $$
-
+<img src="{{ site.url }}/imgs/mnist-chicken/algorithm.png" style="align:center; margin: 0 auto; width:40%;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">Simple algorithm for returning meaningful predictions.</p>
 
 There are several ways of modeling p(x). In this post, we will focus on [variational autoencoders](https://arxiv.org/abs/1312.6114) (VAE) which have been quite successful at modeling distribution of images.
