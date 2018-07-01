@@ -18,9 +18,12 @@ title: Visualizations
   </div>
 
   <div style="float:right; width:55%;">
-    <p>Interactive visualization of various optimization algorithms on a Rosenbrock function.</p>
+    <p>Interactive visualization of various optimization algorithms on a Rosenbrock function. Yo.</p>
   </div>
+  <p style="margin-bottom:1px;"> </p>
 </div>
+
+<p style="margin-bottom:1px;"> </p>
 &nbsp;
 
 
