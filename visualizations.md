@@ -21,6 +21,7 @@ title: Visualizations
     Interactive visualization of various optimization algorithms on a Rosenbrock function.
   </div>
 </div>
+&nbsp;
 
 
 <!-- Rastrigin viz -->
@@ -41,6 +42,7 @@ title: Visualizations
     Interactive visualization of various optimization algorithms on a Rastrigin function.
   </div>
 </div>
+&nbsp;
 
 
 <!-- Random Walk -->
@@ -66,7 +68,7 @@ title: Visualizations
 <!-- Optim viz -->
 <div class="post">
   <h2 class="post-title">
-    <a href="https://emiliendupont.github.io/optimization-visualization/">
+    <a href="https://emiliendupont.github.io/optimization-viz/">
       Optimization Algorithms in Deep Learning
     </a>
   </h2>
