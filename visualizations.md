@@ -12,15 +12,16 @@ title: Visualizations
   </h2>
 
   <span class="post-date">1 Jan 2018</span>
-
-  <div style="float:left; width:40%;">
-    <img src="{{ site.url }}/imgs/viz-previews/optimization_rosenbrock.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
-  </div>
-
-  <div style="float:right; width:55%;">
-    Interactive visualization of various optimization algorithms on a Rosenbrock function.
-  </div>
 </div>
+
+<div style="float:left; width:40%;">
+  <img src="{{ site.url }}/imgs/viz-previews/optimization_rosenbrock.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+</div>
+
+<div style="float:right; width:55%;">
+  Interactive visualization of various optimization algorithms on a Rosenbrock function. Yo.
+</div>
+
 &nbsp;
 
 
@@ -68,7 +69,7 @@ title: Visualizations
 <!-- Optim viz -->
 <div class="post">
   <h2 class="post-title">
-    <a href="https://emiliendupont.github.io/optimization-viz/">
+    <a href="https://emiliendupont.github.io/optimization-visualization/">
       Optimization Algorithms in Deep Learning
     </a>
   </h2>
@@ -76,7 +77,7 @@ title: Visualizations
   <span class="post-date">2 May 2016</span>
 
   <div style="float:left; width:40%;">
-    <img src="{{ site.url }}/imgs/viz-previews/optimization_visualization.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+    <img src="{{ site.url }}/imgs/viz-previews/optimization_viz.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
   </div>
 
   <div style="float:right; width:55%;">
