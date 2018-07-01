@@ -12,21 +12,19 @@ title: Visualizations
   </h2>
 
   <span class="post-date">1 Jan 2018</span>
+  <div style="float:left; width:40%;">
+    <img src="{{ site.url }}/imgs/viz-previews/optimization_rosenbrock.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+  </div>
 
-    <div style="float:left; width:40%;">
-      <img src="{{ site.url }}/imgs/viz-previews/optimization_rosenbrock.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
-    </div>
-
-    <div style="float:right; width:55%;">
-      Interactive visualization of various optimization algorithms on a Rosenbrock function.
-    </div>
+  <div style="float:right; width:55%;">
+    Interactive visualization of various optimization algorithms on a Rosenbrock function.
+  </div>
 
 </div>
 
 <div style="clear:both;">
-
 </div>
-
+&nbsp;
 
 <!-- Rastrigin viz -->
 <div class="post">
@@ -45,6 +43,9 @@ title: Visualizations
   <div style="float:right; width:55%;">
     Interactive visualization of various optimization algorithms on a Rastrigin function.
   </div>
+</div>
+
+<div style="clear:both;">
 </div>
 &nbsp;
 
@@ -68,6 +69,10 @@ title: Visualizations
   </div>
 </div>
 
+<div style="clear:both;">
+</div>
+&nbsp;
+
 
 <!-- Optim viz -->
 <div class="post">
@@ -87,6 +92,10 @@ title: Visualizations
     Interactive visualization of optimization algorithms used in Deep Learning.
   </div>
 </div>
+
+<div style="clear:both;">
+</div>
+&nbsp;
 
 
 <!-- Japan Earthquakes -->
