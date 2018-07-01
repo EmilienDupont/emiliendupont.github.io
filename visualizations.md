@@ -13,11 +13,11 @@ title: Visualizations
 
   <span class="post-date">29 Mar 2016</span>
 
-  <div style="float:left">
-    <img src="{{ site.url }}/imgs/viz-previews/japan_earthquakes.png" style="align:left; width:40%; border: 1px solid #d3d3d3; border-style: outset;">
+  <div style="float:left; width:40%;">
+    <img src="{{ site.url }}/imgs/viz-previews/japan_earthquakes.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
   </div>
 
-  <div style="float:right">
+  <div style="float:right; width:50%;">
     Time lapse visualization of earthquakes in Japan in 2011.
   </div>
 </div>
