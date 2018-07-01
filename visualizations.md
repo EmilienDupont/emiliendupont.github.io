@@ -12,7 +12,7 @@ title: Visualizations
   </h2>
 
   <span class="post-date">29 Mar 2016</span>
-  <img src="{{ site.url }}/imgs/viz-previews/japan-earthquakes.png" style="align:left; width:40%;">
+  <img src="{{ site.url }}/imgs/viz-previews/japan_earthquakes.png" style="align:left; width:40%;">
 
   Time lapse visualization of earthquakes in Japan in 2011.
 </div>
