@@ -7,10 +7,10 @@ title: About
 Hello! I'm a Machine Learning Scientist [@STIC](http://www.slb.com/about/rd/technology/stic.aspx). I studied [Computational Maths](https://icme.stanford.edu/) at [Stanford University](https://www.stanford.edu/) and Theoretical Physics at [Imperial College](https://www.imperial.ac.uk/).
 
 
-My research interests are in machine learning and generative models in particular. I've worked on disentanglement and more recently on semantic inpainting and its applications to various scientific problems.
+My research interests are in machine learning and generative models in particular. I've worked on [disentanglement](https://arxiv.org/abs/1804.00104) and more recently on [semantic inpainting](https://arxiv.org/abs/1802.03065) and its applications to various scientific problems.
 
 
-I also enjoy making visualizations of algorithms and mathematical concepts.
+I also enjoy making [visualizations](https://emiliendupont.github.io/visualizations/) of algorithms and concepts in maths.
 
 
 ### Contact
