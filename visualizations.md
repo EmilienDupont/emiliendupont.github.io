@@ -3,6 +3,30 @@ layout: page
 title: Visualizations
 ---
 
+<!-- Earthquake 3d viz -->
+<div class="post">
+  <h2 class="post-title">
+    <a href="https://emiliendupont.github.io/earthquake-3d-globe/">
+      Earthquake 3D Globe
+    </a>
+  </h2>
+
+  <span class="post-date">1 Jul 2018</span>
+  <div style="float:left; width:40%;">
+    <img src="{{ site.url }}/imgs/viz-previews/earthquake_3d.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+  </div>
+
+  <div style="float:right; width:55%;">
+    Time lapse visualization of all large earthquakes on the Earth in 2017.
+  </div>
+
+</div>
+
+<div style="clear:both;">
+</div>
+&nbsp;
+
+
 <!-- Rosenbrock viz -->
 <div class="post">
   <h2 class="post-title">
