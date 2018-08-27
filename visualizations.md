@@ -11,7 +11,7 @@ title: Visualizations
     </a>
   </h2>
 
-  <span class="post-date">1 Jul 2018</span>
+  <span class="post-date">27 Aug 2018</span>
   <div style="float:left; width:40%;">
     <img src="{{ site.url }}/imgs/viz-previews/sgd_time_dependent.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
   </div>
