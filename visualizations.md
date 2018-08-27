@@ -3,6 +3,29 @@ layout: page
 title: Visualizations
 ---
 
+<!-- Time dependent SGD viz -->
+<div class="post">
+  <h2 class="post-title">
+    <a href="https://emiliendupont.github.io/time-dependent-sgd/">
+      SGD on time dependent function
+    </a>
+  </h2>
+
+  <span class="post-date">1 Jul 2018</span>
+  <div style="float:left; width:40%;">
+    <img src="{{ site.url }}/imgs/viz-previews/sgd_time_dependent.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+  </div>
+
+  <div style="float:right; width:55%;">
+    Visualization of momentum SGD on an objective function that changes with time.
+  </div>
+
+</div>
+
+<div style="clear:both;">
+</div>
+&nbsp;
+
 <!-- Earthquake 3d viz -->
 <div class="post">
   <h2 class="post-title">
