@@ -10,7 +10,7 @@ My research interests are mainly in representation learning and generative model
 
 I also enjoy making [visualizations](https://emiliendupont.github.io/visualizations/) of algorithms and concepts in maths.
 
-Before starting my PhD, I worked as a Machine Learning Scientist at [STIC](http://www.slb.com/about/rd/technology/stic.aspx). I also studied [Computational Maths](https://icme.stanford.edu/) at [Stanford University](https://www.stanford.edu/) and Theoretical Physics at [Imperial College](https://www.imperial.ac.uk/).
+Before starting my PhD, I worked as a machine learning scientist at [STIC](http://www.slb.com/about/rd/technology/stic.aspx). I also studied [computational maths](https://icme.stanford.edu/) at [Stanford University](https://www.stanford.edu/) and theoretical physics at [Imperial College](https://www.imperial.ac.uk/).
 
 
 ### Contact
