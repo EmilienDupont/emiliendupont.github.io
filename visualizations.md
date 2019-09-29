@@ -3,6 +3,8 @@ layout: page
 title: Visualizations
 ---
 
+My most up to date visualizations can be found on my [Observable](https://observablehq.com/@emiliendupont) profile.
+
 <!-- Time dependent SGD viz -->
 <div class="post">
   <h2 class="post-title">
