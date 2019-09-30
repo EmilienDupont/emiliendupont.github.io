@@ -12,7 +12,7 @@ An up to date list of my publications can be found on my [Google Scholar](https:
   </div>
 
   <div style="flex:2.5;">
-    <b style="font-size: 24px;">Augmented Neural ODEs</b><br>
+    <b style="font-size: 130%;">Augmented Neural ODEs</b><br>
 
     <i><b>E. Dupont</b>, A. Doucet, Y. W. Teh</i><br>
 
@@ -40,7 +40,7 @@ An up to date list of my publications can be found on my [Google Scholar](https:
   </div>
 
   <div style="flex:2.5;">
-    <b style="font-size: 24px;">Probabilistic Semantic Inpainting with Pixel Constrained CNNs</b><br>
+    <b style="font-size: 130%;">Probabilistic Semantic Inpainting with Pixel Constrained CNNs</b><br>
 
     <i><b>E. Dupont</b>, S. Suresha</i><br>
 
@@ -68,7 +68,7 @@ An up to date list of my publications can be found on my [Google Scholar](https:
   </div>
 
   <div style="flex:2.5;">
-    <b style="font-size: 24px;">Learning Disentangled Joint Continuous and Discrete Representations</b><br>
+    <b style="font-size: 130%;">Learning Disentangled Joint Continuous and Discrete Representations</b><br>
 
     <i><b>E. Dupont</b></i><br>
 
@@ -96,7 +96,7 @@ An up to date list of my publications can be found on my [Google Scholar](https:
   </div>
 
   <div style="flex:2.5;">
-    <b style="font-size: 24px;">Generating Realistic Geology Conditioned on Physical Measurements with Generative Adversarial Networks</b><br>
+    <b style="font-size: 130%;">Generating Realistic Geology Conditioned on Physical Measurements with Generative Adversarial Networks</b><br>
 
     <i><b>E. Dupont</b>, T. Zhang, P. Tilke, L. Liang, W. Bailey</i><br>
 
