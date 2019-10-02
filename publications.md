@@ -28,8 +28,6 @@ An up to date list of my publications can be found on my [Google Scholar](https:
   </div>
 </div>
 
-<div style="clear:both;">
-</div>
 &nbsp;
 
 
@@ -56,8 +54,6 @@ An up to date list of my publications can be found on my [Google Scholar](https:
   </div>
 </div>
 
-<div style="clear:both;">
-</div>
 &nbsp;
 
 
@@ -84,8 +80,6 @@ An up to date list of my publications can be found on my [Google Scholar](https:
   </div>
 </div>
 
-<div style="clear:both;">
-</div>
 &nbsp;
 
 
@@ -108,6 +102,4 @@ An up to date list of my publications can be found on my [Google Scholar](https:
   </div>
 </div>
 
-<div style="clear:both;">
-</div>
 &nbsp;
