@@ -146,7 +146,7 @@ For more details, you can download the pdf version of my resume [here](https://g
       <b style="font-size: 130%;">DTU Compute</b>
       <span style="float:right; color:#7a7a7a;">June 2013 - Sep 2013</span>
     </p>
-    Software Engineering Intern<br>
+    Research Intern<br>
     <p style="color:#7a7a7a">
       Research on sparse dynamics for PDEs with Allan Engsig-Karup
     </p>
