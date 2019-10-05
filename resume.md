@@ -1,11 +1,11 @@
 ---
-layout: page
 title: Resume
+layout: page
 ---
 
-For more details, you can download the pdf version of my resume [here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf).
+For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf).
 
-## Education
+## Education 🎓
 
 <!-- PhD -->
 <div style="display:flex;">
@@ -70,7 +70,7 @@ For more details, you can download the pdf version of my resume [here](https://g
 </div>
 
 
-## Experience
+## Experience 👨‍💼
 
 <!-- Apple -->
 <div style="display:flex;">
@@ -155,7 +155,7 @@ For more details, you can download the pdf version of my resume [here](https://g
 </div>
 
 
-## Awards
+## Awards 🌟
 
 <ul>
   <li>
@@ -196,7 +196,7 @@ For more details, you can download the pdf version of my resume [here](https://g
 </ul>
 
 
-## Teaching
+## Teaching 👨‍🏫
 
 <ul>
   <li>
@@ -210,7 +210,7 @@ For more details, you can download the pdf version of my resume [here](https://g
   </li>
 </ul>
 
-## Skills
+## Skills 💻
 
 <ul>
   <li>
@@ -251,7 +251,7 @@ For more details, you can download the pdf version of my resume [here](https://g
 </ul>
 
 
-## Projects
+## Projects 🌱
 
 <ul>
   <li>
@@ -267,7 +267,7 @@ For more details, you can download the pdf version of my resume [here](https://g
 </ul>
 
 
-## Invited Talks
+## Invited Talks 🏛️
 
 <ul>
   <li>

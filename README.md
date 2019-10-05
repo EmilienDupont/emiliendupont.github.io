@@ -1,3 +1,3 @@
-# Personal Website
+# [Personal website](https://emiliendupont.github.io)
 
-Website is based on [Hyde](https://github.com/poole/hyde), [Poole](http://getpoole.com) and [Jekyll](http://jekyllrb.com).
+Based on the [Alembic](https://alembic.darn.es/) theme, built with [Jekyll](https://jekyllrb.com/).

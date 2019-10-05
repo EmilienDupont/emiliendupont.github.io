@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Interactive Visualization of Optimization Algorithms in Deep Learning
 comments: true
 img_excerpt: imgs/optim_viz_excerpt.png
@@ -28,7 +27,7 @@ It is basically a quadratic "bowl" with two gaussians creating minima at (1, 0) 
 
 Starting from the same point, different algorithms will converge to different minima. Often, SGD and SGD with momentum will converge to the poorer minimum (the one on the right) while RMSProp and Adam will converge to the global minimum. For this particular function, Adam is the algorithm that converges to the global minimum from the most initializations.
 
-<img src="{{ site.url }}/imgs/optim_viz_only_adam.png" style="align:center; margin: 0 auto; width:500px;">
+<img src="{{ site.url }}/imgs/optim_viz_only_adam.png" style="display:block; margin-left:auto; margin-right:auto; width:500px;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">Only Adam (in green) converges to the global minimum.</p>
 
 
@@ -36,7 +35,7 @@ Starting from the same point, different algorithms will converge to different mi
 
 Augmenting SGD with momentum has [many advantages](https://distill.pub/2017/momentum/) and often works better than the other standard algorithms for an appropriately chosen learning rate (check out this [paper](https://arxiv.org/abs/1705.08292) for more details). However, with the wrong learning rate, SGD with momentum can overshoot minima and this often leads to a spiraling pattern around the minimum.
 
-<img src="{{ site.url }}/imgs/optim_viz_momentum.png" style="align:center; margin: 0 auto; width:500px;">
+<img src="{{ site.url }}/imgs/optim_viz_momentum.png" style="display:block; margin-left:auto; margin-right:auto; width:500px;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">SGD with momentum spiraling towards the minimum.</p>
 
 ### Standard SGD does not get you far
@@ -51,22 +50,22 @@ There are many famous [test functions](https://en.wikipedia.org/wiki/Test_functi
 
 ### Rastrigin
 
->The visualization for this function can be found [here](https://bl.ocks.org/EmilienDupont/2141380d9332c37b52f8385ca225703f)
+>The visualization for this function can be found [here](https://observablehq.com/@emiliendupont/optimization-on-rastrigin-function)
 
 A [Rastrigin function](https://en.wikipedia.org/wiki/Rastrigin_function) is a quadratic bowl overlayed with a grid of sine bumps creating a large number of local minima.
 
-<img src="{{ site.url }}/imgs/optim_viz_rastrigin.gif" style="align:center; margin: 0 auto; width:640px;">
+<img src="{{ site.url }}/imgs/optim_viz_rastrigin.gif" style="display:block; margin-left:auto; margin-right:auto; width:640px;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">SGD with momentum reaches the global optimum while all other algorithms get stuck in the same local minimum.</p>
 
 In this example, SGD with momentum outperforms all other algorithms using the default parameter settings. The speed built up from the momentum allows it to power through the sine bumps and converge to the global minimum when other algorithms don't. Of course, this would not necessarily be the case if the sine bumps had been scaled or spaced differently. Indeed, on the first function in this post, Adam performed the best while SGD with momentum performs the best on the Rastrigin function. This shows that there is no single algorithm that will perform the best on all functions, even in simple 2D cases.
 
 ### Rosenbrock
 
->The visualization for this function can be found [here](https://bl.ocks.org/EmilienDupont/f97a3902f4f3a98f350500a3a00371db)
+>The visualization for this function can be found [here](https://observablehq.com/@emiliendupont/optimization-on-rosenbrock-function)
 
 The [Rosenbrock function](https://en.wikipedia.org/wiki/Rosenbrock_function) has a single global minimum inside a parabolic shaped valley. Most algorithms rapidly converge to this valley, but it is typically difficult to converge to the global minimum within this valley.
 
-<img src="{{ site.url }}/imgs/optim_viz_rosenbrock.gif" style="align:center; margin: 0 auto; width:640px;">
+<img src="{{ site.url }}/imgs/optim_viz_rosenbrock.gif" style="display:block; margin-left:auto; margin-right:auto; width:640px;">
 <p style="text-align: center; font-style: italic; font-size: 80%;">All algorithms find the global minimum but through very different paths</p>
 
 While all algorithms converge to the optimum, the adaptive and non adaptive optimization algorithms approach the minimum through different paths. In higher dimensional problems, like in deep learning, different optimization algorithms will likely explore very different areas of parameter space.

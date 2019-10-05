@@ -1,6 +1,6 @@
 ---
-layout: page
 title: Publications
+layout: page
 ---
 
 An up to date list of my publications can be found on my [Google Scholar](https://scholar.google.com/citations?user=IY5WyIEAAAAJ&hl=en) profile.
