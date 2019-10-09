@@ -107,6 +107,6 @@ In this post we used the toy example of chickens and digits to show that a deep 
 #### Footnotes
 <a name="footnote1">1</a>. The idea of putting a picture of a chicken through an MNIST model initially came from a question I heard on the [Approximate Inference](http://approximateinference.org/) panel at NIPS 2017
 
-<a name="footnote2">2</a>. I always resize MNIST from 28 by 28 to 32 by 32 because powers of 2 are nice
+<a name="footnote2">2</a>. I resized MNIST from 28 by 28 to 32 by 32 for these experiments
 
 <a name="footnote3">3</a>. The word confidence is used loosely here and is not related to confidence in the [statistical sense](https://en.wikipedia.org/wiki/Confidence_interval). However $$ \max_y p(y \vert x) $$ is commonly used to show that a model is “confident” about its predictions and this is how we use it here
