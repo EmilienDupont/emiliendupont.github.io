@@ -110,7 +110,7 @@ navigation_header:
 - title: Blog
   url: /blog/
 - title: Visualizations
-  url: /visualizations/
+  url: https://observablehq.com/@emiliendupont
 
 navigation_footer:
 - title: Emilien Dupont
