@@ -238,7 +238,7 @@ For more details, you can download the pdf version of my resume [{% include icon
   </li>
 
   <li>
-    Programming
+    Languages
     <ul>
       <li>
         <i>Fluent:</i> Danish, English, French
