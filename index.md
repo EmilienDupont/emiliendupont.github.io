@@ -30,7 +30,7 @@ layout: page
 <br style="line-height:10%;">
 I'm a PhD student in machine learning at [Oxford](http://www.ox.ac.uk/), supervised by [Yee Whye Teh](http://www.stats.ox.ac.uk/~teh/) and [Arnaud Doucet](https://www.stats.ox.ac.uk/~doucet/) and funded by [Google DeepMind](https://deepmind.com/).
 
-My recent research interests include invertible neural networks, flow-based models  and [continuous depth neural networks](https://arxiv.org/abs/1904.01681). I'm also interested in the intersection of physics and machine learning and especially how we can build models that combine learning from data with physical principles. I've also worked on neural rendering during an internship at [Apple](https://apple.com/) and am very interested in how we can use graphics renderers to make computer vision algorithms more robust and interpretable.
+My recent research interests include invertible neural networks, flow-based models  and [continuous depth neural networks](https://arxiv.org/abs/1904.01681). I'm also interested in the intersection of physics and machine learning and especially how we can build models that combine learning from data with physical principles. I've also worked on [neural rendering](https://arxiv.org/abs/2006.07630) during an internship at [Apple](https://apple.com/) and am very interested in how we can use graphics renderers to make computer vision algorithms more robust and interpretable.
 
 Previously, I've worked on [disentanglement](https://arxiv.org/abs/1804.00104), [inpainting](https://arxiv.org/abs/1802.03065) and its [applications](https://arxiv.org/abs/1810.03728) to various physical problems.
 

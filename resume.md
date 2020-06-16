@@ -3,7 +3,7 @@ title: Resume
 layout: page
 ---
 
-For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf).
+For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf) (updated June 2020).
 
 ## Education 🎓
 
@@ -72,7 +72,27 @@ For more details, you can download the pdf version of my resume [{% include icon
 
 ## Experience 👨‍💼
 
-<!-- Apple -->
+<!-- Apple Part Time-->
+<div style="display:flex;">
+
+  <div style="flex:0.5; padding-right:5%">
+    <img src="{{ site.url }}/imgs/resume-icons/apple.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+  </div>
+
+  <div style="flex:4;">
+    <p style="margin:0px">
+      <b style="font-size: 130%;">Apple</b>
+      <span style="float:right; color:#7a7a7a;">Nov 2019 - June 2020</span>
+    </p>
+    Part Time Research Intern<br>
+    <p style="color:#7a7a7a">
+      Part time research on neural rendering during PhD with collaborators at Apple
+    </p>
+  </div>
+
+</div>
+
+<!-- Apple Internship-->
 <div style="display:flex;">
 
   <div style="flex:0.5; padding-right:5%">
@@ -158,12 +178,6 @@ For more details, you can download the pdf version of my resume [{% include icon
 ## Awards 🌟
 
 <ul>
-  <li>
-    <b>NeurIPS Top Reviewer</b>
-    <span style="float:right; color:#7a7a7a;">2019</span> <br>
-    <i>Top 400 Reviewer</i>
-  </li>
-
   <li>
     <b>Google DeepMind Scholarship</b>
     <span style="float:right; color:#7a7a7a;">2018</span> <br>
@@ -261,9 +275,18 @@ For more details, you can download the pdf version of my resume [{% include icon
 
   <li>
     <b>Open source</b><br>
-    <i>Open sourced code for several deep learning papers with &#9733;700+ on my <a href="https://github.com/EmilienDupont">Github profile</a></i>
+    <i>Open sourced code for several deep learning papers with &#9733;900+ on my <a href="https://github.com/EmilienDupont">Github profile</a></i>
   </li>
 
+</ul>
+
+
+## Academic Services 📚
+<ul>
+  <li>
+  <b>Reviewer</b><br>
+  <i>NeurIPS 2020, ICML 2020, NeurIPS 2019 (Top reviewer award)</i>
+  </li>
 </ul>
 
 

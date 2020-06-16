@@ -3,7 +3,30 @@ title: Publications
 layout: page
 ---
 
-An up to date list of my publications can be found on my [Google Scholar](https://scholar.google.com/citations?user=IY5WyIEAAAAJ&hl=en) profile.
+An up to date list of publications can be found on my [Google Scholar](https://scholar.google.com/citations?user=IY5WyIEAAAAJ&hl=en) profile.
+
+
+<div style="display:flex;">
+
+  <div style="flex:1; padding-right:5%">
+    <img src="{{ site.url }}/imgs/paper-icons/enr.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+  </div>
+
+  <div style="flex:2.5;">
+    <b style="font-size: 130%;">Equivariant Neural Rendering</b><br>
+
+    <i><b>E. Dupont</b>, M. A. Bautista, A. Colburn, A. Sankar, C. Guestrin, J. Susskind, Q. Shan</i><br>
+
+    <a href="https://arxiv.org/abs/2006.07630">
+      arxiv.org/abs/2006.07630
+    </a><br>
+
+    <b style="color:#2ca25f">ICML 2020</b>
+  </div>
+</div>
+
+&nbsp;
+
 
 <div style="display:flex;">
 
