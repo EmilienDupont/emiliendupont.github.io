@@ -3,7 +3,7 @@ title: Resume
 layout: page
 ---
 
-For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf) (updated June 2020).
+For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf) (updated December 2020).
 
 ## Education 🎓
 
@@ -214,7 +214,12 @@ For more details, you can download the pdf version of my resume [{% include icon
 
 <ul>
   <li>
-    Teaching Assistant, SB2b, Statistical Machine Learning
+    Teaching Assistant, SB2.1, Statistical Inference
+    <span style="float:right; color:#7a7a7a;">Oxford, 2020</span> <br>
+  </li>
+
+  <li>
+    Teaching Assistant, SB2.2, Statistical Machine Learning
     <span style="float:right; color:#7a7a7a;">Oxford, 2019</span> <br>
   </li>
 
@@ -275,7 +280,7 @@ For more details, you can download the pdf version of my resume [{% include icon
 
   <li>
     <b>Open source</b><br>
-    <i>Open sourced code for several deep learning papers with &#9733;900+ on my <a href="https://github.com/EmilienDupont">Github profile</a></i>
+    <i>Open sourced code for several deep learning papers with &#9733;1000+ on my <a href="https://github.com/EmilienDupont">Github profile</a></i>
   </li>
 
 </ul>
@@ -285,7 +290,7 @@ For more details, you can download the pdf version of my resume [{% include icon
 <ul>
   <li>
   <b>Reviewer</b><br>
-  <i>NeurIPS 2020, ICML 2020, NeurIPS 2019 (Top reviewer award)</i>
+  <i>ICLR 2021, NeurIPS 2020 (Top reviewer), ICML 2020 (Top reviewer), NeurIPS 2019 (Top reviewer)</i>
   </li>
 </ul>
 
@@ -293,6 +298,11 @@ For more details, you can download the pdf version of my resume [{% include icon
 ## Invited Talks 🏛️
 
 <ul>
+<li>
+  Representational Limitations of Invertible Models
+  <span style="float:right; color:#7a7a7a;">2020</span> <br>
+  <i>ICML 2020, INNF+ Workshop</i>
+</li>
   <li>
     Combining Physics and Machine Learning with Neural ODEs
     <span style="float:right; color:#7a7a7a;">2019</span> <br>

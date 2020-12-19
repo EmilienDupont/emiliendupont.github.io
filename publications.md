@@ -21,6 +21,10 @@ An up to date list of publications can be found on my [Google Scholar](https://s
       arxiv.org/abs/2006.07630
     </a><br>
 
+    <i class="fa fa-github"></i> <a href="https://github.com/apple/ml-equivariant-neural-rendering">
+      Github repo
+    </a><br>
+
     <b style="color:#2ca25f">ICML 2020</b>
   </div>
 </div>
