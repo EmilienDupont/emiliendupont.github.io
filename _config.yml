@@ -37,7 +37,7 @@ plugins:
 - jekyll-remote-theme
 
 # 2.5. This is required for github pages
-remote_theme: daviddarnes/alembic
+remote_theme: daviddarnes/alembic@main
 
 # 3. Gem settings
 paginate: 5 # jekyll-paginate > items per page

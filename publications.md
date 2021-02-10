@@ -9,6 +9,46 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 <div style="display:flex;">
 
   <div style="flex:1; padding-right:5%">
+    <img src="{{ site.url }}/imgs/paper-icons/nfd.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+  </div>
+
+  <div style="flex:2.5;">
+    <b style="font-size: 130%;">Generative Models as Distributions of Functions</b><br>
+
+    <i><b>E. Dupont</b>, Y. W. Teh, A. Doucet</i><br>
+
+    <a href="http://arxiv.org/abs/2102.04776">
+      arxiv.org/abs/2102.04776
+    </a><br>
+  </div>
+</div>
+
+&nbsp;
+
+
+<div style="display:flex;">
+
+  <div style="flex:1; padding-right:5%">
+    <img src="{{ site.url }}/imgs/paper-icons/lietransformer.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+  </div>
+
+  <div style="flex:2.5;">
+    <b style="font-size: 130%;">LieTransformer: Equivariant self-attention for Lie Groups</b><br>
+
+    <i>M. Hutchinson*, C. Le Lan*, S. Zaidi*, <b>E. Dupont</b>, Y. W. Teh, H. Kim</i><br>
+
+    <a href="https://arxiv.org/abs/2012.10885">
+      arxiv.org/abs/2012.10885
+    </a><br>
+  </div>
+</div>
+
+&nbsp;
+
+
+<div style="display:flex;">
+
+  <div style="flex:1; padding-right:5%">
     <img src="{{ site.url }}/imgs/paper-icons/enr.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
   </div>
 
