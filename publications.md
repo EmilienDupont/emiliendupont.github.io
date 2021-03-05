@@ -9,6 +9,26 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 <div style="display:flex;">
 
   <div style="flex:1; padding-right:5%">
+    <img src="{{ site.url }}/imgs/paper-icons/coin.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+  </div>
+
+  <div style="flex:2.5;">
+    <b style="font-size: 130%;">COIN: COmpression with Implicit Neural representations</b><br>
+
+    <i><b>E. Dupont*</b>, A. Goliński*, M. Alizadeh, Y. W. Teh, A. Doucet</i><br>
+
+    <a href="https://arxiv.org/abs/2103.03123">
+      arxiv.org/abs/2103.03123
+    </a><br>
+  </div>
+</div>
+
+&nbsp;
+
+
+<div style="display:flex;">
+
+  <div style="flex:1; padding-right:5%">
     <img src="{{ site.url }}/imgs/paper-icons/nfd.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
   </div>
 

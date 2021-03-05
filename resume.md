@@ -3,7 +3,7 @@ title: Resume
 layout: page
 ---
 
-For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf) (updated February 2021).
+For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf) (updated March 2021).
 
 ## Education 🎓
 
@@ -71,6 +71,27 @@ For more details, you can download the pdf version of my resume [{% include icon
 
 
 ## Experience 👨‍💼
+
+<!-- Deepmind internship-->
+<div style="display:flex;">
+
+  <div style="flex:0.5; padding-right:5%">
+    <img src="{{ site.url }}/imgs/resume-icons/deepmind.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+  </div>
+
+  <div style="flex:4;">
+    <p style="margin:0px">
+      <b style="font-size: 130%;">Google DeepMind</b>
+      <span style="float:right; color:#7a7a7a;">Mar 2021 - July 2021</span>
+    </p>
+    Research Scientist Intern<br>
+    <p style="color:#7a7a7a">
+      Research with Danilo Rezende
+    </p>
+  </div>
+
+</div>
+
 
 <!-- Apple Part Time-->
 <div style="display:flex;">
