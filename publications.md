@@ -20,6 +20,12 @@ An up to date list of publications can be found on my [Google Scholar](https://s
     <a href="https://arxiv.org/abs/2103.03123">
       arxiv.org/abs/2103.03123
     </a><br>
+
+    <i class="fa fa-github"></i> <a href="https://github.com/EmilienDupont/coin">
+      Github repo
+    </a><br>
+
+    <b style="color:#666a6b">ICLR 2021 Neural Compression Workshop Spotlight 🎉</b>
   </div>
 </div>
 
@@ -39,6 +45,10 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 
     <a href="http://arxiv.org/abs/2102.04776">
       arxiv.org/abs/2102.04776
+    </a><br>
+
+    <i class="fa fa-github"></i> <a href="https://github.com/EmilienDupont/neural-function-distributions">
+      Github repo
     </a><br>
   </div>
 </div>
@@ -60,6 +70,8 @@ An up to date list of publications can be found on my [Google Scholar](https://s
     <a href="https://arxiv.org/abs/2012.10885">
       arxiv.org/abs/2012.10885
     </a><br>
+
+    <b style="color:#2ca25f">ICML 2021</b>
   </div>
 </div>
 

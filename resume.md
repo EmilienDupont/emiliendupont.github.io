@@ -3,7 +3,7 @@ title: Resume
 layout: page
 ---
 
-For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf) (updated March 2021).
+For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf) (updated May 2021).
 
 ## Education 🎓
 
@@ -17,7 +17,7 @@ For more details, you can download the pdf version of my resume [{% include icon
   <div style="flex:4;">
     <p style="margin:0px">
       <b style="font-size: 130%;">University of Oxford</b>
-      <span style="float:right; color:#7a7a7a;">2018 - 2021</span>
+      <span style="float:right; color:#7a7a7a;">2018 -</span>
     </p>
     PhD Machine Learning<br>
     <p style="color:#7a7a7a">
@@ -311,7 +311,7 @@ For more details, you can download the pdf version of my resume [{% include icon
 <ul>
   <li>
   <b>Reviewer</b><br>
-  <i>ICLR 2021, NeurIPS 2020 (Top reviewer), ICML 2020 (Top reviewer), NeurIPS 2019 (Top reviewer)</i>
+  <i>ICLR 2021 (Outstanding reviewer), NeurIPS 2020 (Top reviewer), ICML 2020 (Top reviewer), NeurIPS 2019 (Top reviewer)</i>
   </li>
 </ul>
 
