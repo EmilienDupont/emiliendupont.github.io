@@ -3,7 +3,7 @@ title: Resume
 layout: page
 ---
 
-For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf) (updated May 2021).
+For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf) (updated December 2021).
 
 ## Education 🎓
 
@@ -269,7 +269,7 @@ For more details, you can download the pdf version of my resume [{% include icon
     Frameworks
     <ul>
       <li>
-        <i>Deep Learning:</i> Pytorch, Tensorflow, Keras
+        <i>Deep Learning:</i> Pytorch, Jax, Haiku, Keras
       </li>
       <li>
         <i>Visualization:</i> d3, plotly
@@ -311,7 +311,7 @@ For more details, you can download the pdf version of my resume [{% include icon
 <ul>
   <li>
   <b>Reviewer</b><br>
-  <i>ICLR 2021 (Outstanding reviewer), NeurIPS 2020 (Top reviewer), ICML 2020 (Top reviewer), NeurIPS 2019 (Top reviewer)</i>
+  <i>AISTATS 2022, ICLR 2022, ICLR 2021 (Outstanding reviewer), NeurIPS 2020 (Outstanding reviewer), ICML 2020 (Top reviewer), NeurIPS 2019 (Top reviewer)</i>
   </li>
 </ul>
 
@@ -319,11 +319,16 @@ For more details, you can download the pdf version of my resume [{% include icon
 ## Invited Talks 🏛️
 
 <ul>
-<li>
-  Representational Limitations of Invertible Models
-  <span style="float:right; color:#7a7a7a;">2020</span> <br>
-  <i>ICML 2020, INNF+ Workshop</i>
-</li>
+  <li>
+    The Curse of Discretization and Learning Distributions of Functions
+    <span style="float:right; color:#7a7a7a;">2021</span> <br>
+    <i>ML Collective</i>
+  </li>
+  <li>
+    Representational Limitations of Invertible Models
+    <span style="float:right; color:#7a7a7a;">2020</span> <br>
+    <i>ICML 2020, INNF+ Workshop</i>
+  </li>
   <li>
     Combining Physics and Machine Learning with Neural ODEs
     <span style="float:right; color:#7a7a7a;">2019</span> <br>
