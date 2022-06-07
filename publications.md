@@ -35,13 +35,15 @@ An up to date list of publications can be found on my [Google Scholar](https://s
   </div>
 
   <div style="flex:2.5;">
-    <b style="font-size: 100%;">From data to functa: Your data point is a function and you should treat it like one</b><br>
+    <b style="font-size: 100%;">From data to functa: Your data point is a function and you can treat it like one</b><br>
 
     <i><b>E. Dupont*</b>, H. Kim*, A. Eslami, D. Rezende, D. Rosenbaum</i><br>
 
     <a href="https://arxiv.org/abs/2201.12204">
       arxiv.org/abs/2201.12204
     </a><br>
+
+    <b style="color:#2ca25f">ICML 2022</b>
   </div>
 </div>
 
