@@ -15,12 +15,16 @@ An up to date list of publications can be found on my [Google Scholar](https://s
   </div>
 
   <div style="flex:2.5;">
-    <b style="font-size: 100%;">COIN++: Data Agnostic Neural Compression</b><br>
+    <b style="font-size: 100%;">COIN++: Neural Compression Across Modalities</b><br>
 
     <i><b>E. Dupont*</b>, H. Loya*, M. Alizadeh, A. Goliński, Y. W. Teh, A. Doucet</i><br>
 
     <a href="https://arxiv.org/abs/2201.12904">
       arxiv.org/abs/2201.12904
+    </a><br>
+
+    <i class="fa fa-github"></i> <a href="https://github.com/EmilienDupont/coinpp">
+      Github repo 👩‍💻
     </a><br>
   </div>
 </div>
@@ -119,6 +123,10 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 
     <a href="https://arxiv.org/abs/2012.10885">
       arxiv.org/abs/2012.10885
+    </a><br>
+
+    <i class="fa fa-github"></i> <a href="https://github.com/oxcsml/lie-transformer">
+      Github repo 👩‍💻
     </a><br>
 
     <b style="color:#2ca25f">ICML 2021</b>

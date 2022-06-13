@@ -3,7 +3,7 @@ title: Resume
 layout: page
 ---
 
-For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf) (updated February 2022).
+For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf) (updated June 2022).
 
 ## Education 🎓
 
@@ -86,7 +86,7 @@ For more details, you can download the pdf version of my resume [{% include icon
     </p>
     Research Scientist Intern<br>
     <p style="color:#7a7a7a">
-      Research with Danilo Rezende
+      Research with Danilo Rezende on generative models of neural networks
     </p>
   </div>
 
