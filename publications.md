@@ -6,7 +6,54 @@ layout: page
 An up to date list of publications can be found on my [Google Scholar](https://scholar.google.com/citations?user=IY5WyIEAAAAJ&hl=en) profile.
 
 
+# 2023
+
+<div style="display:flex;">
+
+  <div style="flex:1; padding-right:5%">
+    <img src="{{ site.url }}/imgs/paper-icons/spatial-functa.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+  </div>
+
+  <div style="flex:2.5;">
+    <b style="font-size: 100%;">Spatial Functa: Scaling Functa to ImageNet Classification and Generation
+</b><br>
+
+    <i>M. Bauer, <b>E. Dupont</b>, A. Brock, D. Rosenbaum, J. Schwarz, H. Kim</i><br>
+
+    <a href="https://arxiv.org/abs/2302.03130">
+      arxiv.org/abs/2302.03130
+    </a><br>
+
+    <b style="color:#666a6b">ICLR 2023 Neural Fields Workshop</b>
+  </div>
+</div>
+
+&nbsp;
+
+
 # 2022
+
+<div style="display:flex;">
+
+  <div style="flex:1; padding-right:5%">
+    <img src="{{ site.url }}/imgs/paper-icons/thesis.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+  </div>
+
+  <div style="flex:2.5;">
+    <b style="font-size: 100%;">Neural Networks as Data</b><br>
+
+    <i><b>E. Dupont</b></i><br>
+
+    <a href="https://ora.ox.ac.uk/objects/uuid:c573637c-bf05-4e8a-a8e4-d499eec77446">
+      Oxford University Research Archive
+    </a><br>
+
+    <b style="color:#2ca25f">Thesis</b>
+  </div>
+</div>
+
+&nbsp;
+
 
 <div style="display:flex;">
 
@@ -26,6 +73,8 @@ An up to date list of publications can be found on my [Google Scholar](https://s
     <i class="fa fa-github"></i> <a href="https://github.com/EmilienDupont/coinpp">
       Github repo 👩‍💻
     </a><br>
+
+    <b style="color:#2ca25f">TMLR 2022</b>
   </div>
 </div>
 
@@ -45,6 +94,10 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 
     <a href="https://arxiv.org/abs/2201.12204">
       arxiv.org/abs/2201.12204
+    </a><br>
+
+    <i class="fa fa-github"></i> <a href="https://github.com/deepmind/functa">
+      Github repo 👩‍💻
     </a><br>
 
     <b style="color:#2ca25f">ICML 2022</b>

@@ -3,7 +3,7 @@ title: Resume
 layout: page
 ---
 
-For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf) (updated June 2022).
+For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf) (updated April 2023).
 
 ## Education 🎓
 
@@ -17,7 +17,7 @@ For more details, you can download the pdf version of my resume [{% include icon
   <div style="flex:4;">
     <p style="margin:0px">
       <b style="font-size: 130%;">University of Oxford</b>
-      <span style="float:right; color:#7a7a7a;">2018 -</span>
+      <span style="float:right; color:#7a7a7a;">2018 - 2022</span>
     </p>
     PhD Machine Learning<br>
     <p style="color:#7a7a7a">
@@ -71,6 +71,27 @@ For more details, you can download the pdf version of my resume [{% include icon
 
 
 ## Experience 👨‍💼
+
+<!-- Deepmind job-->
+<div style="display:flex;">
+
+  <div style="flex:0.5; padding-right:5%">
+    <img src="{{ site.url }}/imgs/resume-icons/deepmind.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+  </div>
+
+  <div style="flex:4;">
+    <p style="margin:0px">
+      <b style="font-size: 130%;">Google DeepMind</b>
+      <span style="float:right; color:#7a7a7a;">Jan 2023 - </span>
+    </p>
+    Research Scientist<br>
+    <p style="color:#7a7a7a">
+      Research on neural fields and machine learning for science
+    </p>
+  </div>
+
+</div>
+
 
 <!-- Deepmind internship-->
 <div style="display:flex;">
@@ -310,8 +331,12 @@ For more details, you can download the pdf version of my resume [{% include icon
 ## Academic Services 📚
 <ul>
   <li>
+  <b>Co-organizer</b><br>
+  <i>ICLR 2023 Workshop - <a href="https://sites.google.com/view/neural-fields">Neural Fields across Fields: Methods and Applications of Implicit Neural Representations</a> </i>
+  </li>
+  <li>
   <b>Reviewer</b><br>
-  <i>AISTATS 2022, ICLR 2022, ICLR 2021 (Outstanding reviewer), NeurIPS 2020 (Outstanding reviewer), ICML 2020 (Top reviewer), NeurIPS 2019 (Top reviewer)</i>
+  <i>ICLR 2023, AISTATS 2022, ICLR 2022, ICLR 2021 (Outstanding reviewer), NeurIPS 2020 (Outstanding reviewer), ICML 2020 (Top reviewer), NeurIPS 2019 (Top reviewer)</i>
   </li>
 </ul>
 

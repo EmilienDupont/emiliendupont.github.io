@@ -1,5 +1,5 @@
 ---
-title: Hello!
+title: Hello! 🌸
 layout: page
 ---
 
@@ -28,14 +28,10 @@ layout: page
   </p>
 </div>
 <br style="line-height:10%;">
-I'm a PhD student in machine learning at [Oxford](http://www.ox.ac.uk/), supervised by [Yee Whye Teh](http://www.stats.ox.ac.uk/~teh/) and [Arnaud Doucet](https://www.stats.ox.ac.uk/~doucet/) and funded by [Google DeepMind](https://deepmind.com/).
+I'm a research scientist at [DeepMind](https://www.deepmind.com/) working in the Science team. 
 
-Recently, I've been interested in implicit neural representations and how to use them for [compression](https://arxiv.org/abs/2201.12904), [generative modeling](https://arxiv.org/abs/2102.04776) or as [data points](https://arxiv.org/abs/2201.12204) for deep learning. I'm also interested in the intersection of physics and machine learning and especially in combining learning from data with physical principles, such as the equivalence between [symmetries and conservation laws](https://arxiv.org/abs/2012.10885). I've also worked on [neural rendering](https://arxiv.org/abs/2006.07630) and am very interested in how we can use graphics renderers to make computer vision algorithms more robust and interpretable.
-
-Previously, I've worked on invertible and [continuous depth neural networks](https://arxiv.org/abs/1904.01681), [disentanglement](https://arxiv.org/abs/1804.00104), [inpainting](https://arxiv.org/abs/1802.03065) and its [applications](https://arxiv.org/abs/1810.03728) to various physical problems.
-
-Before my PhD, I worked for 2 years as a machine learning scientist at [STIC](http://www.slb.com/about/rd/technology/stic.aspx) in the Bay Area. I studied [computational maths](https://icme.stanford.edu/) at [Stanford University](https://www.stanford.edu/) and theoretical physics at [Imperial College](https://www.imperial.ac.uk/).
+I did my PhD in machine learning at [Oxford](http://www.ox.ac.uk/) with [Yee Whye Teh](http://www.stats.ox.ac.uk/~teh/) and [Arnaud Doucet](https://www.stats.ox.ac.uk/~doucet/). I also studied [computational maths](https://icme.stanford.edu/) at [Stanford University](https://www.stanford.edu/) and theoretical physics at [Imperial College](https://www.imperial.ac.uk/).
 
 ### Contact
 
-My email is _emilien.dupont (at) stats.ox.ac.uk_
+My email is _edupont (at) google.com_
