@@ -28,7 +28,7 @@ layout: page
   </p>
 </div>
 <br style="line-height:10%;">
-I'm a research scientist at [DeepMind](https://www.deepmind.com/) working in the Science team. 
+I'm a research scientist at [DeepMind](https://www.deepmind.com/) working in the science team. 
 
 I did my PhD in machine learning at [Oxford](http://www.ox.ac.uk/) with [Yee Whye Teh](http://www.stats.ox.ac.uk/~teh/) and [Arnaud Doucet](https://www.stats.ox.ac.uk/~doucet/). I also studied [computational maths](https://icme.stanford.edu/) at [Stanford University](https://www.stanford.edu/) and theoretical physics at [Imperial College](https://www.imperial.ac.uk/).
 
