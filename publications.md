@@ -10,7 +10,51 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 
 <div style="display:flex;">
 
-  <div style="flex:1; padding-right:5%">
+  <div style="flex:0.8; padding-right:5%">
+    <img src="{{ site.url }}/imgs/paper-icons/c3.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+  </div>
+
+  <div style="flex:2.5;">
+    <b style="font-size: 100%;">C3: High-performance and low-complexity neural compression from a single image or video
+</b><br>
+
+    <i>H. Kim*, M. Bauer*, L. Theis, J. Schwarz, </i><b style="font-weight: 800;">E. Dupont*</b><i></i><br>
+
+    <a href="https://arxiv.org/abs/2312.02753">
+      arxiv.org/abs/2312.02753
+    </a><br>
+  </div>
+</div>
+
+&nbsp;
+
+
+<div style="display:flex;">
+
+  <div style="flex:0.8; padding-right:5%">
+    <img src="{{ site.url }}/imgs/paper-icons/mnp.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+  </div>
+
+  <div style="flex:2.5;">
+    <b style="font-size: 100%;">Deep Stochastic Processes via Functional Markov Transition Operators
+</b><br>
+
+    <i>J. Xu, </i><b style="font-weight: 800;">E. Dupont</b><i>, K. Märtens, T. Rainforth, Y. W. Teh</i><br>
+
+    <a href="https://arxiv.org/abs/2305.15574">
+      arxiv.org/abs/2305.15574
+    </a><br>
+
+    <b style="color:#2ca25f">NeurIPS 2023</b>
+  </div>
+</div>
+
+&nbsp;
+
+
+<div style="display:flex;">
+
+  <div style="flex:0.8; padding-right:5%">
     <img src="{{ site.url }}/imgs/paper-icons/spatial-functa.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
   </div>
 
@@ -18,7 +62,7 @@ An up to date list of publications can be found on my [Google Scholar](https://s
     <b style="font-size: 100%;">Spatial Functa: Scaling Functa to ImageNet Classification and Generation
 </b><br>
 
-    <i>M. Bauer, <b>E. Dupont</b>, A. Brock, D. Rosenbaum, J. Schwarz, H. Kim</i><br>
+    <i>M. Bauer*, </i><b style="font-weight: 800;">E. Dupont</b><i>, A. Brock, D. Rosenbaum, J. Schwarz, H. Kim*</i><br>
 
     <a href="https://arxiv.org/abs/2302.03130">
       arxiv.org/abs/2302.03130
@@ -35,14 +79,14 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 
 <div style="display:flex;">
 
-  <div style="flex:1; padding-right:5%">
+  <div style="flex:0.8; padding-right:5%">
     <img src="{{ site.url }}/imgs/paper-icons/thesis.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
   </div>
 
   <div style="flex:2.5;">
     <b style="font-size: 100%;">Neural Networks as Data</b><br>
 
-    <i><b>E. Dupont</b></i><br>
+    <i></i><b style="font-weight: 800;">E. Dupont</b><i></i><br>
 
     <a href="https://ora.ox.ac.uk/objects/uuid:c573637c-bf05-4e8a-a8e4-d499eec77446">
       Oxford University Research Archive
@@ -57,14 +101,14 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 
 <div style="display:flex;">
 
-  <div style="flex:1; padding-right:5%">
+  <div style="flex:0.8; padding-right:5%">
     <img src="{{ site.url }}/imgs/paper-icons/coinpp.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
   </div>
 
   <div style="flex:2.5;">
     <b style="font-size: 100%;">COIN++: Neural Compression Across Modalities</b><br>
 
-    <i><b>E. Dupont*</b>, H. Loya*, M. Alizadeh, A. Goliński, Y. W. Teh, A. Doucet</i><br>
+    <i></i><b style="font-weight: 800;">E. Dupont*</b><i>, H. Loya*, M. Alizadeh, A. Goliński, Y. W. Teh, A. Doucet</i><br>
 
     <a href="https://arxiv.org/abs/2201.12904">
       arxiv.org/abs/2201.12904
@@ -83,14 +127,14 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 
 <div style="display:flex;">
 
-  <div style="flex:1; padding-right:5%">
+  <div style="flex:0.8; padding-right:5%">
     <img src="{{ site.url }}/imgs/paper-icons/functa.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
   </div>
 
   <div style="flex:2.5;">
     <b style="font-size: 100%;">From data to functa: Your data point is a function and you can treat it like one</b><br>
 
-    <i><b>E. Dupont*</b>, H. Kim*, A. Eslami, D. Rezende, D. Rosenbaum</i><br>
+    <i></i><b style="font-weight: 800;">E. Dupont*</b><i>, H. Kim*, A. Eslami, D. Rezende, D. Rosenbaum</i><br>
 
     <a href="https://arxiv.org/abs/2201.12204">
       arxiv.org/abs/2201.12204
@@ -111,14 +155,14 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 
 <div style="display:flex;">
 
-  <div style="flex:1; padding-right:5%">
+  <div style="flex:0.8; padding-right:5%">
     <img src="{{ site.url }}/imgs/paper-icons/coin.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
   </div>
 
   <div style="flex:2.5;">
     <b style="font-size: 100%;">COIN: COmpression with Implicit Neural representations</b><br>
 
-    <i><b>E. Dupont*</b>, A. Goliński*, M. Alizadeh, Y. W. Teh, A. Doucet</i><br>
+    <i></i><b style="font-weight: 800;">E. Dupont*</b><i>, A. Goliński*, M. Alizadeh, Y. W. Teh, A. Doucet</i><br>
 
     <a href="https://arxiv.org/abs/2103.03123">
       arxiv.org/abs/2103.03123
@@ -137,14 +181,14 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 
 <div style="display:flex;">
 
-  <div style="flex:1; padding-right:5%">
+  <div style="flex:0.8; padding-right:5%">
     <img src="{{ site.url }}/imgs/paper-icons/nfd.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
   </div>
 
   <div style="flex:2.5;">
     <b style="font-size: 100%;">Generative Models as Distributions of Functions</b><br>
 
-    <i><b>E. Dupont</b>, Y. W. Teh, A. Doucet</i><br>
+    <i></i><b style="font-weight: 800;">E. Dupont</b><i>, Y. W. Teh, A. Doucet</i><br>
 
     <a href="http://arxiv.org/abs/2102.04776">
       arxiv.org/abs/2102.04776
@@ -165,14 +209,14 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 
 <div style="display:flex;">
 
-  <div style="flex:1; padding-right:5%">
+  <div style="flex:0.8; padding-right:5%">
     <img src="{{ site.url }}/imgs/paper-icons/lietransformer.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
   </div>
 
   <div style="flex:2.5;">
     <b style="font-size: 100%;">LieTransformer: Equivariant self-attention for Lie Groups</b><br>
 
-    <i>M. Hutchinson*, C. Le Lan*, S. Zaidi*, <b>E. Dupont</b>, Y. W. Teh, H. Kim</i><br>
+    <i>M. Hutchinson*, C. Le Lan*, S. Zaidi*, </i><b style="font-weight: 800;">E. Dupont</b><i>, Y. W. Teh, H. Kim</i><br>
 
     <a href="https://arxiv.org/abs/2012.10885">
       arxiv.org/abs/2012.10885
@@ -191,14 +235,14 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 
 <div style="display:flex;">
 
-  <div style="flex:1; padding-right:5%">
+  <div style="flex:0.8; padding-right:5%">
     <img src="{{ site.url }}/imgs/paper-icons/enr.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
   </div>
 
   <div style="flex:2.5;">
     <b style="font-size: 100%;">Equivariant Neural Rendering</b><br>
 
-    <i><b>E. Dupont</b>, M. A. Bautista, A. Colburn, A. Sankar, C. Guestrin, J. Susskind, Q. Shan</i><br>
+    <i></i><b style="font-weight: 800;">E. Dupont</b><i>, M. A. Bautista, A. Colburn, A. Sankar, C. Guestrin, J. Susskind, Q. Shan</i><br>
 
     <a href="https://arxiv.org/abs/2006.07630">
       arxiv.org/abs/2006.07630
@@ -219,14 +263,14 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 
 <div style="display:flex;">
 
-  <div style="flex:1; padding-right:5%">
+  <div style="flex:0.8; padding-right:5%">
     <img src="{{ site.url }}/imgs/paper-icons/anode.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
   </div>
 
   <div style="flex:2.5;">
     <b style="font-size: 100%;">Augmented Neural ODEs</b><br>
 
-    <i><b>E. Dupont</b>, A. Doucet, Y. W. Teh</i><br>
+    <i></i><b style="font-weight: 800;">E. Dupont</b><i>, A. Doucet, Y. W. Teh</i><br>
 
     <a href="https://arxiv.org/abs/1904.01681">
       arxiv.org/abs/1904.01681
@@ -247,14 +291,14 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 
 <div style="display:flex;">
 
-  <div style="flex:1; padding-right:5%">
+  <div style="flex:0.8; padding-right:5%">
     <img src="{{ site.url }}/imgs/paper-icons/inpainting.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
   </div>
 
   <div style="flex:2.5;">
     <b style="font-size: 100%;">Probabilistic Semantic Inpainting with Pixel Constrained CNNs</b><br>
 
-    <i><b>E. Dupont</b>, S. Suresha</i><br>
+    <i></i><b style="font-weight: 800;">E. Dupont</b><i>, S. Suresha</i><br>
 
     <a href="https://arxiv.org/abs/1810.03728">
       arxiv.org/abs/1810.03728
@@ -273,14 +317,14 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 
 <div style="display:flex;">
 
-  <div style="flex:1; padding-right:5%">
+  <div style="flex:0.8; padding-right:5%">
     <img src="{{ site.url }}/imgs/paper-icons/jointvae.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
   </div>
 
   <div style="flex:2.5;">
     <b style="font-size: 100%;">Learning Disentangled Joint Continuous and Discrete Representations</b><br>
 
-    <i><b>E. Dupont</b></i><br>
+    <i></i><b style="font-weight: 800;">E. Dupont</b><i></i><br>
 
     <a href="https://arxiv.org/abs/1804.00104">
       arxiv.org/abs/1804.00104
@@ -299,14 +343,14 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 
 <div style="display:flex;">
 
-  <div style="flex:1; padding-right:5%">
+  <div style="flex:0.8; padding-right:5%">
     <img src="{{ site.url }}/imgs/paper-icons/geology.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
   </div>
 
   <div style="flex:2.5;">
     <b style="font-size: 100%;">Generating Realistic Geology Conditioned on Physical Measurements with Generative Adversarial Networks</b><br>
 
-    <i><b>E. Dupont</b>, T. Zhang, P. Tilke, L. Liang, W. Bailey</i><br>
+    <i></i><b style="font-weight: 800;">E. Dupont</b><i>, T. Zhang, P. Tilke, L. Liang, W. Bailey</i><br>
 
     <a href="https://arxiv.org/abs/1802.03065">
       arxiv.org/abs/1802.03065

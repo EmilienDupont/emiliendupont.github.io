@@ -3,7 +3,7 @@ title: Resume
 layout: page
 ---
 
-For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf) (updated April 2023).
+For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf) (updated December 2023).
 
 ## Education 🎓
 
@@ -344,6 +344,11 @@ For more details, you can download the pdf version of my resume [{% include icon
 ## Invited Talks 🏛️
 
 <ul>
+  <li>
+    Compression with neural fields
+    <span style="float:right; color:#7a7a7a;">2023</span> <br>
+    <i>VQEG</i>
+  </li>
   <li>
     The Curse of Discretization and Learning Distributions of Functions
     <span style="float:right; color:#7a7a7a;">2021</span> <br>
