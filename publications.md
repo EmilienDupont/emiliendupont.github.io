@@ -8,6 +8,30 @@ An up to date list of publications can be found on my [Google Scholar](https://s
 
 # 2023
 
+
+<div style="display:flex;">
+
+  <div style="flex:0.8; padding-right:5%">
+    <img src="{{ site.url }}/imgs/paper-icons/funsearch.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+  </div>
+
+  <div style="flex:2.5;">
+    <b style="font-size: 100%;">Mathematical discoveries from program search with large language models
+</b><br>
+
+    <i>B. Romera-Paredes*, M. Barekatain*, A. Novikov*, M. Balog*, P. Kumar*, </i><b style="font-weight: 800;">E. Dupont*</b><i>, F. Ruiz*, J. Ellenberg, P. Wang, O. Fawzi, P. Kohli, A. Fawzi*</i><br>
+
+    <a href="https://www.nature.com/articles/s41586-023-06924-6">
+      nature.com/articles/s41586-023-06924-6
+    </a><br>
+
+    <b style="color:#2ca25f">Nature</b>
+  </div>
+</div>
+
+&nbsp;
+
+
 <div style="display:flex;">
 
   <div style="flex:0.8; padding-right:5%">
