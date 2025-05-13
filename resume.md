@@ -3,7 +3,7 @@ title: Resume
 layout: page
 ---
 
-For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf) (updated December 2023).
+For more details, you can download the pdf version of my resume [{% include icon.html id="pdf" title="pdf" %}here](https://github.com/EmilienDupont/emiliendupont.github.io/raw/master/emilien_resume.pdf) (updated May 2025).
 
 ## Education 🎓
 
@@ -84,9 +84,10 @@ For more details, you can download the pdf version of my resume [{% include icon
       <b style="font-size: 130%;">Google DeepMind</b>
       <span style="float:right; color:#7a7a7a;">Jan 2023 - </span>
     </p>
-    Research Scientist<br>
+    Senior Research Scientist (Nov 2024 -)<br>
+    Research Scientist (Jan 2023 - Oct 2024)<br>
     <p style="color:#7a7a7a">
-      Research on neural fields and machine learning for science
+      Research on LLMs for scientific discovery and neural compression
     </p>
   </div>
 
@@ -148,7 +149,7 @@ For more details, you can download the pdf version of my resume [{% include icon
     </p>
     Research Intern<br>
     <p style="color:#7a7a7a">
-      Research on Neural Rendering with Qi Shan
+      Research on neural rendering with Qi Shan
     </p>
   </div>
 
@@ -168,7 +169,7 @@ For more details, you can download the pdf version of my resume [{% include icon
     </p>
     Machine Learning Scientist<br>
     <p style="color:#7a7a7a">
-      Created, implemented and deployed machine learning algorithms to solve problems in time series, vision and geology, improving state of the art for several tasks &bull; Research on deep generative models with a focus on learning interpretable representations
+      Created, implemented and deployed machine learning algorithms to solve problems in time series, vision and geology, improving state of the art for several tasks. Research on deep generative models with a focus on learning interpretable representations
     </p>
   </div>
 
@@ -336,7 +337,7 @@ For more details, you can download the pdf version of my resume [{% include icon
   </li>
   <li>
   <b>Reviewer</b><br>
-  <i>ICLR 2023, AISTATS 2022, ICLR 2022, ICLR 2021 (Outstanding reviewer), NeurIPS 2020 (Outstanding reviewer), ICML 2020 (Top reviewer), NeurIPS 2019 (Top reviewer)</i>
+  <i>ICLR 2025 Weight Space Learning Workshop, ICLR 2023, AISTATS 2022, ICLR 2022, ICLR 2021 (Outstanding reviewer), NeurIPS 2020 (Outstanding reviewer), ICML 2020 (Top reviewer), NeurIPS 2019 (Top reviewer)</i>
   </li>
 </ul>
 
@@ -344,6 +345,26 @@ For more details, you can download the pdf version of my resume [{% include icon
 ## Invited Talks 🏛️
 
 <ul>
+  <li>
+    Compression by overfitting
+    <span style="float:right; color:#7a7a7a;">2024</span> <br>
+    <i>NeurIPS 2024 Neural Compression Workshop <a href="https://neuralcompression.github.io/workshop24">Keynote</a></i> 
+  </li>
+  <li>
+    FunSearch: Mathematical discoveries through program search with LLMs
+    <span style="float:right; color:#7a7a7a;">2024</span> <br>
+    <i>CVPR 2024 Multimodal Algorithmic Reasoning Workshop <a href="https://marworkshop.github.io/cvpr24/">Keynote</a></i>
+  </li>
+  <li>
+    FunSearch: Mathematical discoveries through program search with LLMs
+    <span style="float:right; color:#7a7a7a;">2024</span> <br>
+    <i>Schmidt Futures</i>
+  </li>
+  <li>
+    FunSearch: Mathematical discoveries through program search with LLMs
+    <span style="float:right; color:#7a7a7a;">2024</span> <br>
+    <i>UC Berkeley</i>
+  </li>
   <li>
     Compression with neural fields
     <span style="float:right; color:#7a7a7a;">2023</span> <br>

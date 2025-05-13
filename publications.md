@@ -6,6 +6,32 @@ layout: page
 An up to date list of publications can be found on my [Google Scholar](https://scholar.google.com/citations?user=IY5WyIEAAAAJ&hl=en) profile.
 
 
+# 2024
+
+
+<div style="display:flex;">
+
+  <div style="flex:0.8; padding-right:5%">
+    <img src="{{ site.url }}/imgs/paper-icons/c3wd.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+  </div>
+
+  <div style="flex:2.5;">
+    <b style="font-size: 100%;">Good, Cheap and Fast: Overfitted Image Compression with Wasserstein Distortion
+</b><br>
+
+    <i>J. Ballé, L. Versari, </i><b style="font-weight: 800;">E. Dupont</b><i>, H. Kim, M. Bauer</i><br>
+
+    <a href="https://arxiv.org/abs/2412.00505">
+      arxiv.org/abs/2412.00505
+    </a><br>
+
+    <b style="color:#2ca25f">CVPR 2025 Highlight 🎉</b>
+  </div>
+</div>
+
+&nbsp;
+
+
 # 2023
 
 
@@ -47,6 +73,12 @@ An up to date list of publications can be found on my [Google Scholar](https://s
     <a href="https://arxiv.org/abs/2312.02753">
       arxiv.org/abs/2312.02753
     </a><br>
+
+    <a href="https://c3-neural-compression.github.io">
+      Project website 🌐
+    </a><br>
+
+    <b style="color:#2ca25f">CVPR 2024</b>
   </div>
 </div>
 
