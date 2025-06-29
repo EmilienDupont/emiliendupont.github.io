@@ -6,6 +6,30 @@ layout: page
 An up to date list of publications can be found on my [Google Scholar](https://scholar.google.com/citations?user=IY5WyIEAAAAJ&hl=en) profile.
 
 
+# 2025
+
+
+<div style="display:flex;">
+
+  <div style="flex:0.8; padding-right:5%">
+    <img src="{{ site.url }}/imgs/paper-icons/alphaevolve.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
+  </div>
+
+  <div style="flex:2.5;">
+    <b style="font-size: 100%;">AlphaEvolve: A coding agent for scientific and algorithmic discovery
+</b><br>
+
+    <i>A. Novikov*, N. Vu*, M. Eisenberger*, </i><b style="font-weight: 800;">E. Dupont*</b><i>, P. Huang*, A. Wagner*, S. Shirobokov*, B. Kozlovskii*, F. Ruiz, A. Mehrabian, M. Kumar, A. See, S. Chaudhuri, G. Holland, A. Davies, S. Nowozin, P. Kohli, M. Balog</i><br>
+
+    <a href="https://arxiv.org/abs/2506.13131">
+      arxiv.org/abs/2506.13131
+    </a><br>
+  </div>
+</div>
+
+&nbsp;
+
+
 # 2024
 
 
